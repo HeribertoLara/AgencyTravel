@@ -1,0 +1,48 @@
+/* Bloque */
+.drop-list {
+    display: grid;
+    place-items: center;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+    height: 2.5rem;
+    margin: 1rem 0;
+  }
+  
+  /* Elemento -- button */
+  .drop-list__button {
+    background-color: transparent;
+    color: var(--dark-color);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-weight: var(--bold);
+    font-size: 1.2rem;
+  }
+  
+  /* Elemento -- options */
+  .drop-list__options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    list-style: none;
+  }
+  
+  /* Elemento -- option */
+  .drop-list__option {
+    padding: 12px 16px;
+    color: rgb(14, 13, 13);
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Modificador -- option:hover */
+  .drop-list__option:hover, .drop-list__option--hovered {
+    background-color: #f1f1f1;
+  }
+  
