@@ -1,0 +1,530 @@
+
+.our-hotels-section {
+    $mobile-small: 300px;
+    $mobile-xs: 350px;
+    $mobile-xss: 375px;
+    $mobile-s: 480px;
+    $mobile: 624px;
+    $tablet: 768px;
+    $desktop: 1024px;
+    $desktop-L: 1200px;
+    $desktopLS: 1440px;
+    $desktopXL: 1550px;
+    $desktop-XXL: 1900px;
+    $brown: rgba(55, 33, 1, 40%);
+    $gray: #575656;
+    $white-0: #ffffff;
+    $black: #000000;
+    margin: 5rem 0;
+    box-sizing: border-box;
+    position: relative;
+    @media (max-width: $tablet) {
+        margin: 3rem 0;
+    }
+
+    .content-title {
+        margin: 0.5rem 0 3rem 0;
+
+        @media (max-width: $tablet) {
+            margin: 0.5rem 0 2.3rem 0;
+        }
+    }
+
+    .our-hotels-carousel-container {
+        @media (max-width: $desktop) {
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 720px;
+            width: 100%;
+        }
+
+        .our-hotels-carousel {
+            padding-bottom: 10px;
+            position: inherit;
+
+            .react-multi-carousel-track {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+                .react-multi-carousel-item {
+                    background-color: white;
+                    // transition: .5s all;
+                    transform: scale(0.9);
+                    transition: all 0.2s ease-in-out;
+                    backface-visibility: hidden;
+                    transform-origin: center;
+                    // transform: translateZ(0);
+
+                    @media (max-width: $desktop) {
+                        padding: 0 15px;
+                        transform: scale(1);
+                    }
+
+                    @media (max-width: $tablet) {
+                        padding: 0 21px;
+
+                    }
+
+                    // animation: .4s ease-in-out;
+                    &.react-multi-carousel-item--active {
+                        z-index: 100;
+                        transform: scale(1.08);
+                        // transition: all .5s ease;
+                        // animation: .4s ease-in-out;
+                        transition: all 0.2s ease-in;
+                        transform-origin: center;
+
+                        @media (max-width: $desktop) {
+                            transform: scale(1);
+                        }
+
+                        .our-hotel-item {
+                            image-rendering: auto;
+
+                            .our-hotel-body {
+                                &::before {
+                                    display: none;
+                                }
+
+                                img {}
+
+                                picture {
+                                    span {
+                                        width: 100% !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .our-hotel-item {
+                        // max-height: 586px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        box-sizing: border-box;
+                        // height: 100%;
+                        // border: .5px solid $grayLight;
+                        .our-hotel-body {
+                            position: relative;
+
+                            &::before {
+                                content: "";
+                                background-color: $brown;
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                            }
+
+                            picture {
+                                span {
+                                    width: 100% !important;
+                                }
+                            }
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                object-position: center center;
+                                transition: all 0.3s;
+                                animation: 0.3 ease-in;
+
+                                @media (max-width: $desktopLS) {
+                                    max-height: 400;
+                                }
+                            }
+                        }
+
+                        .our-hotel-footer {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+
+                            @media (max-width: $desktop) {
+                                flex-direction: column;
+                            }
+
+                            .our-hotel-description {
+                                width: 80%;
+                                margin: 1.7rem 0 1rem;
+                                padding: 0 1.5rem;
+
+                                @media (max-width: $desktop) {
+                                    width: 100%;
+                                }
+
+                                @media (max-width: $desktop) {
+                                    padding: 0;
+                                }
+
+                                .our-hotel-title {
+                                    text-transform: uppercase;
+                                    font-size: 16px;
+                                    font-weight: 600;
+
+                                    @media (max-width: $desktop) {
+                                        font-size: 14px;
+                                    }
+                                }
+
+                                .our-hotel-paragraph,
+                                p {
+                                    color: $gray;
+                                    margin: 0.5rem 0 1rem;
+                                    font-weight: 300;
+                                    display: block;
+                                    line-height: 2rem;
+                                    height: initial;
+                                    overflow: hidden;
+                                    display: -webkit-box;
+                                    -webkit-line-clamp: 3; /* number of lines to show */
+                                            line-clamp: 3; 
+                                    -webkit-box-orient: vertical;
+                                    @media (max-width: $desktopXL) {
+                                        line-height: 1.7rem;
+                                    }
+
+                                    @media (max-width: $desktopLS) {
+                                        font-size: 14px;
+                                    }
+
+                                    // @media (max-width: $tablet) {
+                                    //     height: 120px;
+                                    // }
+                                }
+                                
+
+                                &.our-room-description{
+                                    width: 100%;
+                                    position: relative;
+                                    .our-room-paragraph{
+                                        margin-bottom: 0;
+                                        p{
+                                            margin-bottom: 0;
+                                            
+                                        }
+                                    }
+
+                                    .btn-view-room{
+                                        display: grid;
+                                        width: max-content;
+                                        padding: 0 .5rem;
+                                        position: absolute;
+                                        right: 0;
+                                        bottom: 0;
+                                        background-color: $white-0;
+                                        font-size: 12px;
+                                        &::after{
+                                            content: '';
+                                            bottom: -10px;
+                                            left: 0;
+                                            background-color: $black;
+                                            height: 1px;
+                                            transition: all .5s ease;
+                                            width: 100%;
+                                        }
+                        
+                                        &:hover{
+                                            &::after{
+                                                width: 0;
+                                                transition: all .5s ease;
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                            }
+
+                            .our-hotel-actions {
+                                display: flex;
+                                width: 27%;
+                                flex-direction: column;
+
+                                @media (max-width: $desktop) {
+                                    width: 100%;
+                                    padding: 0 1.5rem;
+                                }
+
+                                @media (max-width: $tablet) {
+                                    width: 100%;
+                                    padding: 0;
+                                }
+
+                                .btn-view-more,
+                                .btn-book-now,
+                                .btn-ver-más,
+                                .btn-reservar-ahora,
+                                .btn-reserva-ahora {
+                                    border: 0.5px solid $gray;
+                                    border-radius: 0;
+                                    padding: 0.8rem 1.2rem;
+                                    text-transform: uppercase;
+                                    font-size: 13px;
+                                    position: relative;
+                                    overflow: hidden;
+                                    z-index: 1;
+
+                                    @media (max-width: $tablet) {
+                                        width: 100%;
+                                        padding: 1rem 1.2rem;
+                                        font-size: 15px;
+                                    }
+                                }
+
+                                .btn-view-more,
+                                .btn-ver-más {
+                                    font-weight: 500;
+
+                                    &::after {
+                                        content: "";
+                                        position: absolute;
+                                        display: block;
+                                        top: 0;
+                                        left: 50%;
+                                        transform: translateX(-50%);
+                                        width: 0;
+                                        height: 100%;
+                                        background: black;
+                                        z-index: -1;
+                                        transition: width 0.5s ease-in-out;
+                                    }
+
+                                    &:hover {
+                                        color: white;
+                                        font-weight: 700;
+
+                                        &:after {
+                                            width: 110%;
+                                            background: black;
+                                        }
+                                    }
+                                }
+
+                                .btn-book-now,
+                                .btn-reservar-ahora,
+                                .btn-reserva-ahora {
+                                    margin-top: 15px;
+                                    color: white;
+                                    background-color: black;
+                                    font-weight: 500;
+
+                                    &::after {
+                                        content: "";
+                                        position: absolute;
+                                        display: block;
+                                        top: 0;
+                                        left: 50%;
+                                        transform: translateX(-50%);
+                                        width: 0;
+                                        height: 100%;
+                                        background: white;
+                                        z-index: -1;
+                                        transition: width 0.5s ease-in-out;
+                                    }
+
+                                    &:hover {
+                                        color: black;
+                                        font-weight: 700;
+
+                                        &:after {
+                                            width: 110%;
+                                            background: white;
+                                        }
+                                    }
+                                }
+                            }
+
+                            
+                            
+                        }
+                    }
+                }
+            }
+
+            .carousel-button-left,
+            .carousel-button-right {
+                background-color: $white-0;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 1px solid white;
+                color: $gray;
+                display: block;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+                box-shadow: 0 1px 9px 0px rgba($color: $black, $alpha: 0.5);
+                @media (max-width: $desktop) {
+                    display: none;
+                }
+
+                .arrow_content_prev,
+                .arrow_content_next {
+                    width: 16px;
+                    height: 21px;
+                    display: flex;
+                    align-items: center;
+
+                    justify-content: center;
+
+                    img {
+                        width: 100%;
+                        object-fit: contain;
+                        height: 100%;
+                        object-position: center center;
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    transition: all 0.5s ease;
+                    border-radius: 50%;
+                    background-color: black;
+                    transform: scale(0);
+                    border: 1px solid black;
+                }
+
+                &:hover {
+                    border: 1px solid black;
+
+                    &::before {
+                        transform: scale(1.2);
+                    }
+
+                    .arrow_content_prev,
+                    .arrow_content_next {
+                        img {
+                            filter: invert(1);
+                        }
+                    }
+                }
+            }
+
+            .carousel-button-left {
+                position: absolute;
+                left: 20%;
+                top: 50%;
+                transition: all 0.5s ease;
+
+                @media (max-width: $desktopXL) {
+                    left: 18%;
+                    transition: all 0.5s ease;
+                }
+            }
+
+            .carousel-button-right {
+                position: absolute;
+                right: 20%;
+                top: 50%;
+
+                @media (max-width: $desktopXL) {
+                    right: 18%;
+                    transition: all 0.5s ease;
+                }
+            }
+
+            .react-multi-carousel-dot-list {
+                bottom: -4%;
+
+                @media (max-width: $desktop) {}
+
+                .react-multi-carousel-dot {
+                    button {
+                        width: 34px;
+                        height: 1px;
+                        border-radius: 0;
+                        background-color: $gray;
+                        border: 0;
+                    }
+
+                    &.react-multi-carousel-dot--active {
+                        button {
+                            width: 80px;
+
+                            background-color: black;
+                        }
+                    }
+                }
+            }
+
+            
+            
+        }
+    }
+
+    .content-actions{
+        padding: 3rem 0rem 0;
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+        @media (max-width:$desktop) {
+            padding: 0 1.5rem;
+            flex-direction: column;
+        }
+        a{
+            @media (max-width:$desktop) {
+                width: 100%;
+            }
+            &.btn-view-more,
+            &.btn-book-now{
+                background-color: $black;
+                color: $white-0;
+                &:hover{
+                    background-color: $white-0;
+                    color: $black;
+                    
+                }
+            }
+            &:hover{
+                background-color: $black;
+                color: $white-0;
+            }
+        }
+    }
+    
+}
+
+    {/* <div className="our-hotel-carousel-container">
+      <Carousel
+        containerClass="our-hotels-carousel"
+        swipeable={true}
+        draggable={false}
+        showDots={true}
+        responsive={responsive}
+        ssr // means to render carousel on server-side.
+        deviceType={["desktop"]}
+        infinite={true}
+        autoPlay={true}
+        pauseOnHover={true}
+        autoPlaySpeed={6000}
+        keyBoardControl={true}
+        transitionDuration={500}
+        centerMode={maxScreen >= hookWidth ? false : isMobile ? false : true}
+        customRightArrow={<ArrowRigth />}
+        customLeftArrow={<ArrowLeft />}
+      >
+        {
+          cards.map(card  =>(
+              
+                <Card 
+                    id={card.id} 
+                    key={card.id} 
+                    imgSrc={card.imgSrc} 
+                    title={card.title}
+                    description={card.description}
+                />
+              )
+          )}
+        
+      </Carousel>
+      </div> */}

@@ -330,12 +330,13 @@ export default function Menu({ setIsOpen, isOpen }) {
               <p className="color__white">REST OF THE WORLD</p>
               <b className="color__white"> +52 123-456-7890</b>
             </a>
-            <address className="menu__contact-phone">
+            <address className="menu__contact-address">
             ACCESO XCALACOCO S/N. FRACC. EL LIMONAR 1, PLAYA DEL CARMEN, QUINTANA ROO, C.P. 77710
 
             </address>
 
-            <a className="menu__contact-phone " href="tel:+521234567890">
+            <a 
+              className="menu__contact-email" href="reservationsinfo@thefiveshotels.com">
              
               <b className="color__white"> reservationsinfo@thefiveshotels.com</b>
             </a>

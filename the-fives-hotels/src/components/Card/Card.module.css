@@ -1,0 +1,75 @@
+
+.card {
+    display: grid;
+   
+    place-items: center;
+    width: 95%;
+    height: 40rem;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ 
+  }
+  
+  .cardImage {
+    position: relative;
+    
+    /* No es necesario un 'height' aquí ya que 'layout="responsive"' se encargará */
+  }
+  
+  .cardContent {
+    display: grid;
+    grid-template-columns: 50% 25%;
+    gap: 1rem;
+    background: white; 
+    padding: 20px;
+    justify-content: justify;
+    height: 12rem;
+  }
+  
+  .cardTitle {
+    margin: 0;
+    color: #333; 
+    font-size: 1rem;
+  }
+  
+  .cardDescription {
+    color: #666; /* O el color que prefieras */
+  }
+  
+  .cardActions {
+    display: grid;
+    
+    margin-top: 20px;
+  }
+  
+  .cardButton {
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin:0.75rem;
+  }
+  
+  .viewMore {
+    background:var(--white); 
+    color: var(--black);
+    border: solid 1px var(--black); 
+  }
+
+  .viewMore:hover {
+    background: var(--black); /* O el color que prefieras */
+    color: white;
+  }
+  
+  .bookNow {
+    background: var(--black); /* O el color que prefieras */
+    color: white;
+  }
+  
+  .bookNow:hover {
+    background: var(--black-2); /* Un tono más oscuro para el efecto hover */
+  }
+
+  

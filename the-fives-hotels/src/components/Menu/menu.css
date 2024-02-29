@@ -48,6 +48,12 @@
   font-weight: bold;
   border-radius: 1px;
   font-size: 1.2rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.menu__special-offers:hover {
+  border-bottom: 2px solid var(--dark-color);
+  scale: 1.01;
 }
 
 .menu__special-offers img {
@@ -133,6 +139,21 @@
   margin-top: 1rem;
   text-decoration: none;
 }
+.menu__contact-address{
+  color: var(--white-0);
+  display: flex;
+  margin: 1rem 0;
+  font-size: .75rem;
+  font-weight: var(--extra-bold);
+  width: 25rem;
+}
 
-
+.menu__contact-email{
+  color: var(--white-0);
+  display: flex;
+  margin-top: 1rem;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: var(--ligth);
+}
 

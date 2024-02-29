@@ -1,0 +1,63 @@
+section.caribe{
+    display: grid;
+    grid-template-columns: 25% 25% 45% ;
+    place-items: center;
+    padding: 0 7rem;
+    gap: 5rem;
+    background-color: var(--white-0);
+    margin-top: 2rem;
+
+}
+
+
+.caribe-sea{
+    overflow: none;
+    grid-column: 1 / 2;
+    padding-top: 3rem;
+}
+.caribe-palmers{
+    grid-column: 2 / 3;
+    padding-top: 5rem;
+}
+.caribe__text{
+    margin-top: 3rem;
+    margin-left: 1.5rem;
+   
+}
+
+
+.caribe__title{
+    font-weight: var(--semi-bold);
+    font-size: 1.2rem;
+}
+
+.caribe__description{
+    font-weight: var(--regular);
+    font-size: 0.8rem;
+    color: var(--black);
+    line-height: 1.7;
+    letter-spacing: normal;
+    margin-bottom: 1.5rem;
+}
+
+/* mediaqueries para monitores grandes */
+
+@media screen and (min-width: 1550px){
+    section.caribe{
+        margin-top: 1rem;
+        padding: 0 8rem;
+        gap: 1rem;
+       
+    }
+    .caribe__text{
+        margin:0;
+    }
+    .caribe__title{
+        font-size: 1.5rem;
+    }
+    .caribe__description{
+        font-size: 1rem;
+    }
+    
+    
+}

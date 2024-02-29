@@ -1,0 +1,43 @@
+.slick-next{
+    z-index: 5;
+    right:  32%;
+}
+
+.slick-prev{
+    z-index: 5;
+    left: 32%;
+}
+
+.slick-list{
+    margin:0 2rem;
+}
+
+.prev-arrow {
+    transition: all 0.3s ease;
+}
+.prev-arrow:hover{
+    scale: 1.1;
+    background-color: var(--black);
+    filter: invert(1);
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+.next-arrow {
+    transition: all 0.3s ease;
+}
+
+.next-arrow:hover{
+    scale: 1.1;
+    background-color: var(--black);
+    filter: invert(1);
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+/* 
+    .slick-current + .slick-active{
+        transition: all 0.3s ease;
+        scale: 1.1;
+    } */
+

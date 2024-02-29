@@ -1,0 +1,22 @@
+.banner-en{
+    background-image: url(../../../public/assets/OfferHomeEn.jpg);
+    background-size: cover;
+    background-position: center center; 
+    height: 95vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    color: blueviolet;
+}
+
+/* Media queries for mobile devices */
+@media screen and (max-width: 768px) {
+    .banner-en {
+        height: 50vh;
+        background-position: top center; 
+        background-repeat: no-repeat;
+        background-size: 100% 70%;
+    }
+    
+}
+

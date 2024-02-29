@@ -4,7 +4,7 @@ import "./globals.css"
 
 
 
-export default function Home() {
+export default function HomeEs() {
   return (
     <>
      <Main/>

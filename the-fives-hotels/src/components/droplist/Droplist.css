@@ -18,6 +18,12 @@
     text-align: left;
     font-weight: var(--bold);
     font-size: 1.2rem;
+    transition: all 0.1s ease-in-out;
+  }
+
+  .drop-list__button:hover {
+    border-bottom: 2px solid var(--dark-color);
+    scale: 1.01;
   }
   
   /* Elemento -- options */
