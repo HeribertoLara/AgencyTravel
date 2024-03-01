@@ -10,7 +10,7 @@ export default function ResidenceCard(props) {
                 <Image  
                     src={imgUrl} 
                     alt="Residence"
-                    layout='responsive'
+                    layout="responsive"
                     width={500}
                     height={500}    
                 />
