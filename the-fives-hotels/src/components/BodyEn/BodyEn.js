@@ -12,7 +12,7 @@ export default function BodyEn() {
             <BannerHomeEn/>
             <DescriptionEn/>
             <OurHotel/>
-            <Residence/>
+           <Residence/> 
         </>
     )
 }
