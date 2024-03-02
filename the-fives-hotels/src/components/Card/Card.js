@@ -1,15 +1,14 @@
-import Image from 'next/image'
-import styles from './Card.module.css' // Use a module CSS for local scope
-import { useEffect, useState } from 'react';
+import styles from './Card.module.css'
+import { useState, useEffect } from 'react';
 
 
 export default function Card({ imgSrc, title, description }) {
-  /* const [windowSize, setWindowSize] = useState({
+  const [windowSize, setWindowSize] = useState({
     width: undefined,
     height: undefined,
   });
- */
-  /* useEffect(() => {
+
+  /* seEffect(() => {
     function handleResize() {
       setWindowSize({
         width: window.innerWidth,
@@ -26,18 +25,21 @@ export default function Card({ imgSrc, title, description }) {
   }, []);
 
   const width = windowSize.width < 1550 ? 500 : 700;
-  const height = windowSize.height< 800 ? 300 : 500  */;
+  const height = windowSize.height< 800 ? 300 : 500   */
 
     return (
       <article className={styles.card}>
-        <Image
-          
-          src={imgSrc}
-          alt={title}
-          width={500}
-          height={500}
-          layout="responsive"
-        />
+        <div 
+          style={{
+            backgroundImage: `url(${imgSrc})`,
+            backgroundSize: 'cover',
+            width: '100%',
+            height: '300px'
+          }}
+          >
+
+        </div>
+        
         <div className={styles.cardContent}>
           <div>
             <h2 className={styles.cardTitle}>
@@ -48,7 +50,9 @@ export default function Card({ imgSrc, title, description }) {
             </p>
           </div>
           <div className={styles.cardActions}>
-            <button className={`${styles.cardButton} ${styles.viewMore}`}>
+            <button 
+            className={`${styles.cardButton} ${styles.viewMore}`}
+            >
               VIEW MORE
             </button>
             <button className={`${styles.cardButton} ${styles.bookNow}`}>

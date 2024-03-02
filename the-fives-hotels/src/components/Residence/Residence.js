@@ -1,7 +1,7 @@
 import React from "react";
 import ResidencesCarousel from "./ResidenceCarousel";
 import style from "./Residence.module.scss";
-import Slider from "react-slick";
+
 
 export default function Residence(props) {
   const residences = [

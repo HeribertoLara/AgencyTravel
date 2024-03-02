@@ -1,6 +1,7 @@
 /* components */
 import Carousel from "../Carousel/Carousel";
 import { TitleSection } from "../TitleSection/TitleSection";
+/* import {DownTown} from "../../../public/assets/carousel-down-town.avif" */
 /* import Card from "../Card/Card"; */
 /* import Carousel from "react-multi-carousel"; */
 /* features */

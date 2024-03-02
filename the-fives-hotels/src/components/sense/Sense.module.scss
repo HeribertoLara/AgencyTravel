@@ -1,0 +1,46 @@
+.senseContainer {
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(5, 100px);
+    gap: 2rem;
+    margin-top: 2rem;
+    width: 100vw;
+    height: 25rem;
+  
+    .button {
+      background-color: transparent;
+      width: 100px;
+      border: none;
+      cursor: pointer;
+      color: var(--white-0);
+  
+      &:hover img {
+        filter: invert(1) brightness(2);   
+
+      }
+      &:active {
+        filter: invert(1) brightness(2);
+        color: var(--black);
+       
+      }
+    }
+    .activeButton{
+        border-bottom: 2px solid var(--black-2);
+        img {
+            filter: invert(1) brightness(2);
+        } 
+        p{
+        color: var(--black-2);
+        width: 5rem;
+      
+        }
+    }
+    
+  }
+  .legend {
+    width: 20rem;
+    grid-column: 2/4;
+    color: var(--white-0);
+
+  }

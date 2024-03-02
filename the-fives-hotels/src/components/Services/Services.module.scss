@@ -1,0 +1,11 @@
+.services{
+    display: grid;
+    place-items: center;
+    margin-top: 4rem;
+    .servicesPhrase{
+        color: var(--black-2);
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 2rem;
+    }
+}

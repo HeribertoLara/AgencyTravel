@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 export default function ResidenceCard(props) {
     
@@ -12,7 +12,7 @@ export default function ResidenceCard(props) {
                     alt="Residence"
                     layout="responsive"
                     width={500}
-                    height={500}    
+                    height={300}    
                 />
                 <figcaption>
                     <h4>{title}</h4>
