@@ -1,0 +1,146 @@
+.weedings__services-photo, .weddings__sand-sea, .weddings__sky-weddings,.weddings__penthouse-weddings{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../../public/assets/weddings.avif);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    .card-service__cover{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+        box-sizing: border-box;
+    
+        
+        p{
+            color: var(--white-0);
+            font-weight: var(--semibold);
+        }
+        a{
+            margin-top: 3rem;
+            text-decoration: none;
+            color: var(--white-0);
+             bottom: 15px;
+            position: absolute;
+        }
+        
+    }
+    .card-service__cover--visible{
+        opacity: 1;
+    }
+    
+
+    .card-service-title{
+            
+            color: var(--white-0);
+           
+        }
+   
+
+}
+
+/* styles para el segundo tipo de card */
+.weddings__boutique-weddings, .weddings__your-love{
+    background-image: url("../../../public/assets/boutique-weddings.avif");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 38rem;
+    height: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    .card-service__cover{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+        box-sizing: border-box;
+    }
+    h3, p{
+        color: var(--white-0)
+    }
+
+    .card-services-links{
+        display: grid;
+        grid-template-columns: 30rem 10rem;
+        bottom: 30px;
+            position: absolute;
+        .card-service__contact{
+            p{
+                b{
+                    color: white;
+                }
+            }
+            a{
+                text-decoration: none;
+                color: white;
+               
+            }
+            hr{
+                border: none;
+            }
+        }
+        .card-service__view-more{
+            text-decoration: none;
+            color: white;
+            bottom: 15px;
+        }
+
+        
+    }
+}
+/* estilos para ambos componentes */
+.card-service__nocover{
+    padding: 2rem;
+    bottom: 15px;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.weedings__services-photo{
+    grid-column: 1/2;
+    grid-row:1/1 ;
+   
+}
+.weddings__boutique-weddings{
+    grid-column: 2/3;
+    grid-row: 1/3;
+}
+.weddings__sand-sea{
+background-image: url(../../../public/assets/sand-and-sea-weddings.avif);
+
+grid-column: 3/4;
+    grid-row: 1/4;
+}
+
+.weddings__sky-weddings{
+    background-image: url(../../../public/assets/sky-weddings.avif);
+    grid-column: 1/2;
+    grid-row:2/7 ;
+}
+
+.weddings__your-love{
+    background-image: url(../../../public/assets/your-love.avif);
+    grid-column: 2/3;
+    grid-row: 3/7;
+    background-position: left;
+}
+
+.weddings__penthouse-weddings{
+    background-image: url(../../../public/assets/pent-house-weddings.avif);
+    grid-column: 3/4;
+    grid-row: 4/7;
+}
