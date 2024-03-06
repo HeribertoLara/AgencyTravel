@@ -1,19 +1,15 @@
 
 .card {
     display: grid;
-   
     place-items: center;
     width: 95%;
     height: 40rem;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
- 
   }
   
   .cardImage {
     position: relative;
-    
-    /* No es necesario un 'height' aquí ya que 'layout="responsive"' se encargará */
   }
   
   .cardContent {
@@ -33,7 +29,7 @@
   }
   
   .cardDescription {
-    color: #666; /* O el color que prefieras */
+    color: #666; 
   }
   
   .cardActions {

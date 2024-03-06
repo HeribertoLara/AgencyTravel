@@ -1,14 +1,7 @@
 /* components */
 import Carousel from "../Carousel/Carousel";
 import { TitleSection } from "../TitleSection/TitleSection";
-/* import {DownTown} from "../../../public/assets/carousel-down-town.avif" */
-/* import Card from "../Card/Card"; */
-/* import Carousel from "react-multi-carousel"; */
-/* features */
-/* import { responsive, ArrowLeft, ArrowRigth } from "./OurHotelsFeatures";
-import { isMobile } from 'react-device-detect';
-/* hoooks */
-import { useWindowDimensions } from "app/hooks/useWindowDimensions";
+
 /* styles */ 
 import "./OurHotel.scss"; 
 
@@ -43,8 +36,6 @@ export default function OurHotel() {
         "This stunning Five-Star Resort is located in Playa del Carmen, Quintana Roo. Discover the luxury residences and curated experiences The Fives Beach offers for an unforgettable vacation in the Riviera Maya... ",
     },
   ];
-  let maxScreen = 1024;
-  const hookWidth = useWindowDimensions();
 
   return (
     <section className="our-hotels-section">

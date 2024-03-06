@@ -23,7 +23,7 @@ const TabsFaqs = () => {
           >
             <Image
               src={section.iconCategory}
-              width={50}
+              width={100}
               height={40}
               alt="icon"
             />

@@ -20,7 +20,7 @@ export const responsive = {
     const arrowLeft = '/assets/prev_arrow.svg';
   
     const {
-      onMove,
+    
       carouselState: { currentSlide, deviceType },
     } = rest;
     const handleClick = () => {
@@ -39,7 +39,7 @@ export const responsive = {
     export const ArrowRigth = ({ onClick, ...rest }) => {
         const arrowRigth = '/assets/next_arrow.svg';
         const {
-          onMove,
+       
           carouselState: { currentSlide, deviceType },
         } = rest;
       

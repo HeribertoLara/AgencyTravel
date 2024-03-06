@@ -2,7 +2,7 @@ const questions = [
     {
       id: 'reservations_rates',
       name: 'RESERVATIONS & RATES',
-      iconCategory:"/assets/plus-icon.svg" ,
+      iconCategory:"/assets/faqs_icons/CALENDAR_ICON.svg" ,
       faqs: [
         
         {
@@ -46,7 +46,7 @@ const questions = [
     {
       id: 'facilities_services',
       name: 'FACILITIES & SERVICES',
-      iconCategory:"/assets/plus-icon.svg",
+      iconCategory:"/assets/faqs_icons/SERVICE_ICON.svg",
       faqs: [
         
         {
@@ -76,7 +76,7 @@ const questions = [
     {
       id:'Rooms',
       name:'ROOMS',
-      iconCategory:"/assets/plus-icon.svg",
+      iconCategory:"/assets/faqs_icons/BEDROOM_ICON.svg",
       faqs:[
         {
           id:1,
@@ -89,7 +89,7 @@ const questions = [
     {
       id:'location_and_transportation',
       name:'LOCATION & TRANSPORTATION',
-      iconCategory:"/assets/plus-icon.svg",
+      iconCategory:"/assets/faqs_icons/LOCATION_ICON.svg",
       faqs:[
           {
             id:1,
@@ -101,7 +101,7 @@ const questions = [
     {
       id:'policies',
       name:'POLICIES',
-      iconCategory:"/assets/plus-icon.svg",
+      iconCategory:"/assets/faqs_icons/DOC_ICON.svg",
       faqs:[
           {
             id:1,

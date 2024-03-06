@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./footer.module.scss";
+import Image from "next/legacy/image";
 
 export default function Footer(props) {
   return (
@@ -29,7 +30,10 @@ export default function Footer(props) {
             Acceso Xcalacoco S/N. Fracc. El Limonar 1, <br />
             Playa Del Carmen, Quintana Roo, C.P. 77710
           </address>
-          <a href="mailto:reservationsinfo@thefiveshotels.com">
+          <a
+            className={styles.mail}
+            href="mailto:reservationsinfo@thefiveshotels.com"
+          >
             reservationsinfo@thefiveshotels.com
           </a>
         </article>
@@ -71,59 +75,66 @@ export default function Footer(props) {
       </section>
 
       <section className={styles.stayConnected}>
-        <h2>STAY CONNECTED WITH THE FIVES HOTELS</h2>
-        <p>
-          SUBSCRIBE AND STAY UP TO DATE WITH ALL OUR PROMOTIONS AND BENEFITS
-        </p>
-        <button className={styles.subscribeButton}>SUBSCRIBE</button>
-        <h3>FOLLOW US</h3>
-        <ul className={styles.socialLinks}>
-          <li>
-            <a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Facebook
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Youtube
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              T witter
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Linkedin
-            </a>
-          </li>
-        </ul>
+        <h4>STAY CONNECTED WITH THE FIVES HOTELS</h4>
+        <div>
+          <p>
+            SUBSCRIBE AND STAY UP TO DATE WITH ALL OUR PROMOTIONS AND BENEFITS
+          </p>
+          <button className={styles.subscribeButton}>SUBSCRIBE</button>
+        </div>
+        <div className={styles.follow}>
+          <h4>FOLLOW US</h4>
+          <ul className={styles.socialLinks}>
+            <li>
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image src="/assets/fb_icon.svg" width={20} height={20} />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image src="/assets/insta_icon.svg" width={20} height={20} />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image src="/assets/yt_icon.svg" width={20} height={20} />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image src="/assets/twt_icon.svg" width={20} height={20} />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image src="/assets/in_icon.svg" width={20} height={20} />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section className={styles.footerRigths}>
+        <p>All Rights Reserved © 2024</p>
       </section>
     </footer>
   );

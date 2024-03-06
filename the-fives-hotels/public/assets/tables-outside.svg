@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="72" height="72" viewBox="0 0 72 72">
+  <defs>
+    <filter id="Elipse_1460" x="0" y="0" width="72" height="72" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-color="#447b6e"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Grupo_35969" data-name="Grupo 35969" transform="translate(-1238 -2014.784)">
+    <g transform="matrix(1, 0, 0, 1, 1238, 2014.78)" filter="url(#Elipse_1460)">
+      <g id="Elipse_1460-2" data-name="Elipse 1460" transform="translate(6 4)" fill="#fff" stroke="#fff" stroke-width="1">
+        <circle cx="30" cy="30" r="30" stroke="none"/>
+        <circle cx="30" cy="30" r="29.5" fill="none"/>
+      </g>
+    </g>
+    <path id="Trazado_46125" data-name="Trazado 46125" d="M101.236,24.319H94.4v7.323a.488.488,0,0,1-.976,0V23.83a.488.488,0,0,1,.488-.488h7.323V14.066a.488.488,0,1,1,.976,0V31.642a.488.488,0,0,1-.976,0ZM85.612,1.868V.39a.488.488,0,0,1,.976,0V1.868A19.892,19.892,0,0,1,96.8,5.357,27.036,27.036,0,0,1,99.949,7.75c.324.286.608.552.852.792.148.145.25.251.3.309a.488.488,0,0,1-.358.82H86.589v9.765h8.3a.488.488,0,1,1,0,.976h-8.3V31.155h3.418a.488.488,0,1,1,0,.976H82.194a.488.488,0,1,1,0-.976h3.418V20.413h-8.3a.488.488,0,1,1,0-.976h8.3V9.672H71.453a.507.507,0,0,1-.511-.465.556.556,0,0,1,.068-.32,1.705,1.705,0,0,1,.217-.31,9.233,9.233,0,0,1,.812-.822,23.7,23.7,0,0,1,3.18-2.4A20.757,20.757,0,0,1,85.612,1.868ZM72.463,8.7H99.541L99.3,8.482A26.1,26.1,0,0,0,96.27,6.176,18.711,18.711,0,0,0,86.1,2.837,19.546,19.546,0,0,0,75.743,6.178a22.729,22.729,0,0,0-3.045,2.3q-.124.113-.235.219Zm-1.5,14.647h7.323a.488.488,0,0,1,.488.488v7.812a.488.488,0,0,1-.976,0V24.32H70.964v7.323a.488.488,0,1,1-.976,0V14.067a.488.488,0,1,1,.976,0Z" transform="translate(1187.9 2032.283)" fill="#447b6e" stroke="#447b6e" stroke-width="1" fill-rule="evenodd"/>
+  </g>
+</svg>

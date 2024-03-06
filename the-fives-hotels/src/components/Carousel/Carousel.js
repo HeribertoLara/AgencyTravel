@@ -43,7 +43,7 @@ function SamplePrevArrow(props) {
         display: "grid", 
         placeItems: "center", 
         background: "white",
-        backgroundImage: "url('/assets/prev_arrow.svg')",
+        backgroundImage: "url('/assets/prev_arrow.svg')", 
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         color: "transparent",

@@ -8,24 +8,7 @@ export default function Card({ imgSrc, title, description }) {
     height: undefined,
   });
 
-  /* seEffect(() => {
-    function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-    window.addEventListener('resize', handleResize);
-
-    // Establecer tamaño inicial
-    handleResize();
-
-    // Limpiar el evento al desmontar
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const width = windowSize.width < 1550 ? 500 : 700;
-  const height = windowSize.height< 800 ? 300 : 500   */
+  
 
     return (
       <article className={styles.card}>
@@ -34,7 +17,8 @@ export default function Card({ imgSrc, title, description }) {
             backgroundImage: `url(${imgSrc})`,
             backgroundSize: 'cover',
             width: '100%',
-            height: '300px'
+            height: '300px',
+            
           }}
           >
 

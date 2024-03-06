@@ -18,7 +18,7 @@ export default function BodyEn() {
       <Sense />
       <Services />
       <Faqs/>
-      <Footer/>
+      <Footer/> 
     </>
   );
 }
