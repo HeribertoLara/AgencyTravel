@@ -5,6 +5,8 @@ import OurHotel from '../OurHotels/OurHotel'
 import  Residence  from '../Residence/Residence'
 import Sense from '../Sense/Sense'
 import Services from '../Services/Services'
+import Faqs from '../Faqs/Faqs'
+import Footer from '../Footer/Footer'
 
 export default function BodyEn() {
   return (
@@ -14,7 +16,9 @@ export default function BodyEn() {
       <OurHotel />
       <Residence />
       <Sense />
-        <Services />
+      <Services />
+      <Faqs/>
+      <Footer/>
     </>
   );
 }

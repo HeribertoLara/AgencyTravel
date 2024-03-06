@@ -1,0 +1,14 @@
+.faqs{
+    display: grid;
+    place-items: center;
+    margin-bottom: 10rem;
+    padding:5rem 0;
+    height: auto;
+    background-color:var(--soft-gray) ;
+    .faqs__text{
+        color: var(--black-2);
+        margin-bottom: 2rem;
+    }
+    
+    
+}

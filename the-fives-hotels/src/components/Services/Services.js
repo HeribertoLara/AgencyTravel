@@ -1,4 +1,3 @@
-import React from 'react'
 import { TitleSection } from '../TitleSection/TitleSection'
 import style from './Services.module.scss'
 import GaleryServices from './GaleryServices'

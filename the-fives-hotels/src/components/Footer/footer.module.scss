@@ -1,0 +1,30 @@
+.footer{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    color: var(--white-0);
+    font-size: 0.85rem;
+    .contactSection,.stayConnected{
+        padding: 2rem;
+        ul{
+            margin-block-start: 0;
+            padding: 0;
+        }
+    }
+    .contactSection{
+        background-color: var(--black-2);
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        address{
+            font-style: normal;
+        }
+    }
+    .stayConnected{
+        background-color: var(--gray);
+        
+    }
+    a{
+        text-decoration: none;
+        color: var(--white-0);
+    }
+}

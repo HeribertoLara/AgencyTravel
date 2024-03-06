@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+
 import CardServices from './CardServices';
 import CardServicesTwo from './CardServicesTwo';
 import "./servicesGalery.scss"
 
-/* import './servicesGalery.scss' */
+
 export default function GaleryServices() {
   const images = [
     {
@@ -47,8 +47,6 @@ export default function GaleryServices() {
         <CardServices image={images[3]}/>
         <CardServicesTwo image={images[4]}/>
         <CardServices image={images[5]}/> 
-       
-       
       </article>
     );
 }
