@@ -8,6 +8,7 @@ import Services from '../Services/Services'
 import Faqs from '../Faqs/Faqs'
 import Footer from '../Footer/Footer'
 
+
 export default function BodyEn() {
   return (
     <>
@@ -16,9 +17,9 @@ export default function BodyEn() {
       <OurHotel />
       <Residence />
       <Sense />
-      <Services />
-      <Faqs/>
-      <Footer/> 
+      <Services /> 
+      {/*<Faqs />
+      <Footer />  */}
     </>
   );
 }

@@ -6,7 +6,7 @@ export default function ResidenceCard(props) {
     const {id, title, text, imgUrl} = props;
     return (
         <>
-            <figure>
+            <figure id={id}>
                 <Image  
                     src={imgUrl} 
                     alt="Residence"

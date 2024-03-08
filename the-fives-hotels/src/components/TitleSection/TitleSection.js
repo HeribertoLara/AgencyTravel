@@ -1,4 +1,4 @@
-import "./TitleSection.css"
+import "./TitleSection.scss"
 
 export function TitleSection({title, titleBit}) {
 

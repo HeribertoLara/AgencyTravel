@@ -1,13 +1,28 @@
 .faqs{
     display: grid;
     place-items: center;
+    box-sizing: border-box;
     /* margin-bottom: 10rem; */
     padding:5rem 0;
     height: auto;
+
+    @media (max-width: 768px) {
+       
+        text-align: justify;
+        width: 100vw;
+        
+      }
     background-color:var(--soft-gray) ;
     .faqs__text{
         color: var(--black-2);
         margin-bottom: 2rem;
+        @media (max-width: 768px) {
+            max-width: 80vw;
+            text-align: justify;
+            width: 80vw;
+            max-width: 100vw;
+            margin-top: 2rem;
+          }
     }
     
     

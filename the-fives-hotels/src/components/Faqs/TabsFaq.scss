@@ -1,6 +1,7 @@
 .faqs__section{
     display: grid;
     place-items: center;
+   
 }
 .faqs__tabs{
     display: grid;
@@ -8,7 +9,15 @@
     grid-row: 3rem;
     place-items: center;
     gap:0.3rem;
-    
+    @media (max-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap: 0.5rem;
+        width: 85vw;
+        max-width: 100vw;
+        overflow-x: auto;
+    }
+ 
     .faq-li{
         display: grid;
         grid-template-columns: 1fr;
@@ -18,11 +27,16 @@
         padding: 1rem;
         border-radius: 3px;
         transition: ease all 0.5s;
+        @media (max-width: 768px) {
+            height: 76%;
+        }
         p{
             justify-content: center;
             font-size: 0.75rem;
             font-weight: var(--semibold);
         }
+       
+            
     }
     .faq-li:hover,.active{
         

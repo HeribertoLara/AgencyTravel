@@ -7,7 +7,9 @@
     margin-top: 2rem;
     width: 100vw;
     height: 25rem;
-  
+    @media (max-width: 768px) {
+     display:none;
+    }
     .button {
       background-color: transparent;
       width: 100px;

@@ -1,26 +1,18 @@
 .residences{
-    box-sizing: border-box;
     display: grid;
     background-color: var(--soft-gray);
     grid-template-columns: 25% 75%;
     padding: 4rem 8rem;
     gap: 1rem;
     @media (max-width: 768px) {
-        
-        overflow: hidden;
-        width: 100%;
        
-        max-width: 100%;
         grid-template-columns: 1fr;
         padding-left: 1rem;
-        padding-right: 2rem;
-        
         
       }
     .residenceText{
-        grid-column: 1;
+        grid-column: 1/2;
         padding:4rem 2rem;
-
     } h2{
         font-size: 1.5rem;
         font-weight: 700;
@@ -28,11 +20,9 @@
         @media (max-width: 768px) {
        
             font-size: 1rem;
-            max-width: 100%;
           }
     
     }h3{
-        width: 100%;
         font-size: 2rem;
         font-weight: 700;
         margin: 0;
@@ -50,7 +40,6 @@
         @media (max-width: 768px) {
        
            width: 90vw;
-           
           }
         
     }button{
@@ -74,7 +63,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-       
     }
     figure{
         background-color: var(--white-0);
@@ -82,23 +70,18 @@
         border: 1px solid var(--black-1);
         border-radius: 3px;
         box-shadow: 0px 0px 3px 0px gray;
-        height: 32rem;
-        margin: 0 1rem 0 1rem;
+
         figcaption{
             padding: 1rem;
             h4{
                
                 font-weight: var(--semi-bold);
+               
             }
             p{
 
                 width: 100%;
             }
-            @media (max-width: 768px) {
-       
-                height: 98vw;
-                
-               }
         }
     }
     

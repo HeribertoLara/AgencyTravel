@@ -2,12 +2,12 @@ import React from "react";
 import styles from "./footer.module.scss";
 import Image from "next/legacy/image";
 
-export default function Footer(props) {
+export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <section className={styles.contactSection}>
-        <article>
-          <ul>
+   <section className={styles.contactSection}> 
+    <article className={styles.phone}>
+            <ul>
             <li>
               <a href="tel:+18005921246">USA & CAN: 1 (800) 592-1246</a>
             </li>
@@ -25,19 +25,20 @@ export default function Footer(props) {
                 Rest Of The World: +52 984 980 0541
               </a>
             </li>
-          </ul>
+          </ul> 
+      
           <address>
             Acceso Xcalacoco S/N. Fracc. El Limonar 1, <br />
             Playa Del Carmen, Quintana Roo, C.P. 77710
           </address>
-          <a
+            <a
             className={styles.mail}
             href="mailto:reservationsinfo@thefiveshotels.com"
           >
             reservationsinfo@thefiveshotels.com
           </a>
-        </article>
-        <article className={styles.additionalInfoSection}>
+        </article> 
+      <article className={styles.additionalInfoSection}>
           <ul>
             <li>
               <a href="#contact-us">Contact Us</a>
@@ -71,18 +72,18 @@ export default function Footer(props) {
               <h3>COMPANIES</h3>
             </div>
           </div>
-        </article>
-      </section>
-
-      <section className={styles.stayConnected}>
-        <h4>STAY CONNECTED WITH THE FIVES HOTELS</h4>
-        <div>
-          <p>
+        </article>  
+      </section>  
+{/* contact */}
+  <section className={styles.stayConnected}> 
+       <h4>STAY CONNECTED WITH THE FIVES HOTELS</h4> 
+      <div>
+           <p>
             SUBSCRIBE AND STAY UP TO DATE WITH ALL OUR PROMOTIONS AND BENEFITS
-          </p>
+          </p> 
           <button className={styles.subscribeButton}>SUBSCRIBE</button>
-        </div>
-        <div className={styles.follow}>
+        </div> 
+       <div className={styles.follow}>
           <h4>FOLLOW US</h4>
           <ul className={styles.socialLinks}>
             <li>
@@ -131,11 +132,14 @@ export default function Footer(props) {
               </a>
             </li>
           </ul>
-        </div>
-      </section>
-      <section className={styles.footerRigths}>
-        <p>All Rights Reserved © 2024</p>
-      </section>
+        </div>  
+       </section>  
+     <section className={styles.footerRigths}>
+        <article className={styles.RigtsArticle}>
+
+          <p className={styles.allRigths}>All Rights Reserved © 2024</p>
+        </article>
+      </section>  
     </footer>
   );
 }

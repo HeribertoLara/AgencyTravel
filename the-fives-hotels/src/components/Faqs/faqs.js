@@ -16,10 +16,8 @@ export default function Faqs() {
             />
             <p className={styles.faqs__text}>
             For quick and complete responses to common queries, ensuring a smooth and pleasant experience during your stay.
-            </p>
-            <TabsFaqs
-            
-            />
+            </p> 
+            <TabsFaqs/>  
         </section>
     )
 }

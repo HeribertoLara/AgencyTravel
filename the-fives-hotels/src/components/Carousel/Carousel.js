@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Card from '../Card/Card'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -74,7 +74,18 @@ export default function Carousel({cards}) {
     autoplaySpeed: 5000,
     pauseOnHover: true,
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 768, // Define el tamaño máximo para dispositivos móviles
+        settings: {
+          slidesToShow: 1, // Solo muestra 1 slide en dispositivos móviles
+          slidesToScroll: 1,
+          nextArrow: false, // Oculta la flecha siguiente
+          prevArrow: false // Oculta la flecha anterior
+        }
+      }
+    ]
   };
 
   return (

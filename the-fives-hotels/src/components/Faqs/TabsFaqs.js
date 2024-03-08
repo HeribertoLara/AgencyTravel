@@ -24,7 +24,7 @@ const TabsFaqs = () => {
             <Image
               src={section.iconCategory}
               width={100}
-              height={40}
+              height={60}
               alt="icon"
             />
             <br />
@@ -33,7 +33,7 @@ const TabsFaqs = () => {
         ))}
       </ul>
   
-        
+ 
         {questions[activeTabIndex].faqs.map((faq) => (
           <DropFaqs 
             key={faq.id} 
@@ -41,7 +41,7 @@ const TabsFaqs = () => {
             answer={faq.answer} 
             />
           
-        ))}
+        ))} 
 
     </article>
   );

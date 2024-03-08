@@ -71,7 +71,7 @@ export default function Residence(props) {
 
         <button className="cardButton viewMore">BOOK NOW</button>
       </article>
-      <ResidencesCarousel residences={residences} />
+     <ResidencesCarousel residences={residences} /> 
     </section>
-  );
+  );/*  */
 }

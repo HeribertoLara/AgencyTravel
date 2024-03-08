@@ -1,10 +1,8 @@
 /* components */
 import ResidenceCard from './ResidenceCard'
-
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import style from './Residence.module.scss'
 import "./featuresResidence.scss"
 
 function SampleNextArrow(props) {
@@ -71,11 +69,22 @@ export default function ResidenceCarousel({residences}) {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 5000,
         pauseOnHover: true,
         nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />
+        prevArrow: <SamplePrevArrow />,
+        responsive: [
+          {
+            breakpoint: 768, // Define el tamaño máximo para dispositivos móviles
+            settings: {
+              slidesToShow: 1, // Solo muestra 1 slide en dispositivos móviles
+              slidesToScroll: 1,
+              nextArrow: false, // Oculta la flecha siguiente
+              prevArrow: false // Oculta la flecha anterior
+            }
+          }
+        ]
       };
     return (
       <Slider 
