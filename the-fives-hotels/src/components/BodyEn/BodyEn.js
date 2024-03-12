@@ -17,9 +17,9 @@ export default function BodyEn() {
       <OurHotel />
       <Residence />
       <Sense />
-      <Services /> 
-      {/*<Faqs />
-      <Footer />  */}
+      <Services />  
+      <Faqs />
+      <Footer /> 
     </>
   );
 }

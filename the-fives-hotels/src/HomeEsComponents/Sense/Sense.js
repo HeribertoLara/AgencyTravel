@@ -5,40 +5,40 @@ export default function Sense(){
     const senseImage = [
         {
             id: 0,
-            name: 'SMEEL',
-            legend:"Rejoice in the sounds of nature.",
+            name: 'OLFATO',
+            legend:"Descubre nuevos olores.",
             url: '/assets/smell-image.avif',
             urlButton: '/assets/smell-icon.svg',
             urlButtonActive: '/assets/smell-icon-white.svg'
         },
         {
             id: 1,
-            name: 'VIEW',
-            legend:"Witness the beauty of the Riviera Maya.",
+            name: 'VISTA',
+            legend:"Goza de los escenarios más fascinantes.",
             url: '/assets/view-image.avif',
             urlButton: '/assets/view-icon.svg',
             urlButtonActive: '/assets/view-icon-white.svg'
         },
         {
             id: 2,
-            name: 'HEARING',
-            legend:"Rejoice in the sounds of nature.",
+            name: 'OIDO',
+            legend:"Sorpréndete por los sonidos de la naturaleza.",
             url: '/assets/hearing-image.avif',
             urlButton: '/assets/hear-icon.svg',
             urlButtonActive: '/assets/hear-icon-white.svg'
         },
         {
             id: 3,
-            name: 'TASTE',
-            legend:"Savor the flavors of the Yucatan Peninsula.",
+            name: 'GUSTO',
+            legend:"Deléitate con una única mezcla de sabores.",
             url: '/assets/taste-image.avif',
             urlButton: '/assets/taste-icon.svg',
             urlButtonActive: '/assets/taste-icon-white.svg'
         },
         {
             id: 4,
-            name: 'TOUCH',
-            legend:"Rejoice in the sounds of nature.",
+            name: 'TACTO',
+            legend:"Percibe nuevas texturas.",
             url: '/assets/touch-image.avif',
             urlButton: '/assets/touch-icon.svg',
             urlButtonActive: '/assets/touch-icon-white.svg'

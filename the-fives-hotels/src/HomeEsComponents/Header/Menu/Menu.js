@@ -1,13 +1,14 @@
 "use client";
-import Droplist from "../droplist/Droplist";
-import DoubleDropList from "../DoubleDropList/DoubleDropList";
+import Droplist from "./droplist/Droplist"
+import DoubleDropList from "./DoubleDropList/DoubleDropList";
 import Link from "next/link";
 import Image from "next/image";
-import "./Menu.scss";
+import "../../../components/Menu/Menu.scss"
+
 
 export default function Menu({ setIsOpen, isOpen }) {
   const menu = {
-    title: "DESTINATIONS AND RESORTS",
+    title: "DESTINOS Y RESORTS",
     items: [
       {
         name: "THE FIVES BEACH HOTEL & RESIDENCES",
@@ -30,14 +31,14 @@ export default function Menu({ setIsOpen, isOpen }) {
         url: "#",
       },
       {
-        name: "DESTINATIONS",
+        name: "DESTINOS",
         url: "#",
       },
     ],
   };
 
   const restaurants = {
-    title: "RESTAURANTS",
+    title: "RESTAURANTES",
     items: [
       {
         name: "THE FIVES BEACH HOTEL & RESIDENCES",
@@ -231,7 +232,7 @@ export default function Menu({ setIsOpen, isOpen }) {
             width={25}
             height={25}
           />
-          <p>SPECIAL OFFERS</p>
+          <p>OFERTAS ESPECIALES</p>
         </Link>
         <Droplist
           className="menu__droplist"
@@ -248,13 +249,14 @@ export default function Menu({ setIsOpen, isOpen }) {
             SPA BY THE FIVES
           </Link>
           <Link className="menu__anchor" href="#">
-            WEDDINGS
+            BODAS
           </Link>
           <Link className="menu__anchor" href="#">
             TOURS
           </Link>
           <Link className="menu__anchor" href="#">
-            MEETINGS & EVENTS
+
+            EVENTOS Y REUNIONES          
           </Link>
         </article>
       </div>
@@ -304,7 +306,7 @@ export default function Menu({ setIsOpen, isOpen }) {
             </li>
             <li className="menu__section">
               <Link className="menu__section-link" href="#">
-                GALLERY
+                GALERIA
               </Link>
             </li>
             <li className="menu__section">
@@ -315,7 +317,7 @@ export default function Menu({ setIsOpen, isOpen }) {
           </ul>
           <article className="menu__contact">
             <h3 className="menu__contact-title">
-              CONTACT US
+              CONTACTANOS
             </h3>
             
             <a className=" menu__contact-phone" href="tel:+11234567890">
@@ -327,15 +329,17 @@ export default function Menu({ setIsOpen, isOpen }) {
               <b className="color__white"> +52 123-456-7890</b>
             </a>
             <a className="menu__contact-phone " href="tel:+521234567890">
-              <p className="color__white">SPAIN TOOL FREE:</p>
+              <p className="color__white">ESPAÑA LLAMADA GRATUITA:</p>
               <b className="color__white"> +52 123-456-7890</b>
             </a>
             <a className="menu__contact-phone " href="tel:+521234567890">
-              <p className="color__white">BRAZIL TOOL FREE</p>
+              <p className="color__white">
+                BRASIL LLAMADA GRATUITA
+              </p>
               <b className="color__white"> +52 123-456-7890</b>
             </a>
             <a className="menu__contact-phone " href="tel:+521234567890">
-              <p className="color__white">REST OF THE WORLD</p>
+              <p className="color__white">RESTO DEL MUNDO</p>
               <b className="color__white"> +52 123-456-7890</b>
             </a>
             <address className="menu__contact-address">

@@ -1,5 +1,5 @@
 .banner-en{
-    background-image: url(../../../public/assets/OfferHomeEn.jpg);
+    background-image: url(/assets/OfferHomeEs.jpg);
     background-size: cover;
     background-position: center center; 
     height: 95vh;
@@ -12,7 +12,7 @@
 /* Media queries for mobile devices */
 @media screen and (max-width: 768px) {
     .banner-en {
-        background-image: url(../../../public/assets/Home-Mobile-En.jpg);
+        background-image: url(/assets/OfferHomeEsMobile.jpg);
         height: 70vh;
         background-position: top center; 
         background-repeat: no-repeat;

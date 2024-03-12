@@ -8,9 +8,10 @@ export default function DescriptionMobileEn() {
     return (
         <section className="description-mobile">
             <h3 className="description-mobile__title">
-                LIVE YOUR DREAM VACATION AT THE FIVES HOTELS & RESIDENCES</h3>
+                VIVE UNAS MAJESTUOSAS VACACIONES EN THE FIVES HOTELS & RESIDENCES
+            </h3>
             <p className="description-mobile__text">
-                Discover the allure of the Mexican Caribbean and be amazed by the beautiful beaches, impressive coral reefs, delicious cuisine, and exciting experiences that The Fives has for you.
+            Adéntrate en el Caribe mexicano y déjate sorprender por las paradisíacas playas, impresionantes arrecifes de coral, deliciosa gastronomía y experiencias que te depara tu estadía en nuestros hoteles.
             </p>
             <figure 
                 style={{ 

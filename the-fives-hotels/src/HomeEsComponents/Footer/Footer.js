@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./footer.module.scss";
+import styles from "../../components/Footer/footer.module.scss";
 import Image from "next/legacy/image";
 
 export default function Footer() {
@@ -15,14 +15,14 @@ export default function Footer() {
               <a href="tel:8006818041">MEX: 800-681-8041</a>
             </li>
             <li>
-              <a href="tel:+34518899218">Spain Toll Free: 34 518 89 9218</a>
+              <a href="tel:+34518899218">España Llamada Gratuita: 34 518 89 9218</a>
             </li>
             <li>
-              <a href="tel:08002003507">Brazil Toll Free: 0800 200 3507</a>
+              <a href="tel:08002003507">Brasil Llamada Gratuita: 0800 200 3507</a>
             </li>
             <li>
               <a href="tel:+529849800541">
-                Rest Of The World: +52 984 980 0541
+                Resto Del Mundo: +52 984 980 0541
               </a>
             </li>
           </ul>
@@ -41,50 +41,50 @@ export default function Footer() {
         <article className={styles.additionalInfoSection}>
           <ul>
             <li>
-              <a href="#contact-us">Contact Us</a>
+              <a href="#contact-us">ContactO</a>
             </li>
             <li>
-              <a href="#jobs-careers">Jobs & Careers</a>
+              <a href="#jobs-careers">Empleos Y Carreras</a>
             </li>
             <li>
-              <a href="#site-map">Site Map</a>
+              <a href="#site-map">Mapa Del Sitio</a>
             </li>
             <li>
-              <a href="#privacy-policy">Privacy Policy</a>
+              <a href="#privacy-policy">Política De Privacidad</a>
             </li>
             <li>
-              <a href="#best-price-guarantee">Best Price Guarantee</a>
+              <a href="#best-price-guarantee">Mejor Precio Garantizado</a>
             </li>
           </ul>
           <div className={styles.agenciesCompanies}>
             <div>
-              <h3>AGENCIES</h3>
+              <h3>AGENCIAS</h3>
               <ul>
                 <li>
-                  <a href="#login-agencies">LOGIN AGENCIES</a>
+                  <a href="#login-agencies">INICIAR SESIÓN EN AGENCIAS</a>
                 </li>
                 <li>
-                  <a href="#register-agencies">REGISTER AGENCIES</a>
+                  <a href="#register-agencies">REGISTRARSE EN AGENCIAS</a>
                 </li>
               </ul>
             </div>
             <div>
-              <h3>COMPANIES</h3>
+              <h3>COMPAÑÍA</h3>
             </div>
           </div>
         </article>
       </section>
       {/* contact */}
       <section className={styles.stayConnected}>
-        <h4>STAY CONNECTED WITH THE FIVES HOTELS</h4>
+        <h4>MANTÉNGASE CONECTADO CON LOS HOTELES FIVES</h4>
         <div>
           <p>
-            SUBSCRIBE AND STAY UP TO DATE WITH ALL OUR PROMOTIONS AND BENEFITS
+          SUSCRÍBETE PARA QUE ESTÉS SIEMPRE ACTUALIZADO DE TODAS NUESTRAS PROMOCIONES Y BENEFICIOS.
           </p>
-          <button className={styles.subscribeButton}>SUBSCRIBE</button>
+          <button className={styles.subscribeButton}>SUBSCRIBETE</button>
         </div>
         <div className={styles.follow}>
-          <h4>FOLLOW US</h4>
+          <h4>SÍGUENOS EN</h4>
           <ul className={styles.socialLinks}>
             <li>
               <a
@@ -136,7 +136,7 @@ export default function Footer() {
       </section>
       <section className={styles.footerRigths}>
         <article className={styles.RigtsArticle}>
-          <p className={styles.allRigths}>All Rights Reserved © 2024</p>
+          <p className={styles.allRigths}>Todos los derechos reservados © 2024</p>
         </article>
       </section>
     </footer>

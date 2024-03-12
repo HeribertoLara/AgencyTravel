@@ -1,9 +1,9 @@
 "use client"
 import Image from "next/image";
-import "./Header.css";
+import "../../components/Header/Header.css";
 import { useEffect, useState } from "react";
-import PreCheckin from "../PreCheckin/PreCheckin";
-import Hamburguer from "../Hamburguer/Hamburguer";
+import PreCheckin from "./PreCheckin/PreCheckinEs";
+import Hamburguer from "./Hamburguer/Hamburguer";
 
 const Header = ({isOpen, setIsOpen}) => {
 
@@ -39,7 +39,7 @@ const Header = ({isOpen, setIsOpen}) => {
             width={20}
             height={20}
           />
-          <p className={scroll?"":"color__white"}>SPECIAL OFFERS</p>
+          <p className={scroll?"":"color__white"}>OFERTAS ESPECIALES</p>
         </a>
       </section>
       <section className="header__logo">

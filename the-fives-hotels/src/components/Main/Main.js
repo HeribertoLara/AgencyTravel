@@ -15,7 +15,7 @@ export default function Main(props) {
                 <Header isOpen={isOpen} setIsOpen={setIsOpen}/>
                :<Menu isOpen={isOpen} setIsOpen={setIsOpen}/> 
             } 
-            <BodyEn/>
+          <BodyEn/> 
             
         </>
     )

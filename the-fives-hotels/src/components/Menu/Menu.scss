@@ -1,4 +1,4 @@
-.menu {
+   .menu {
 
   background-image: url(../../../public/assets/image-burguer-menu.png);
   display: grid;
@@ -8,7 +8,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-
+  @media (max-width: 768px) {
+       
+    display: grid;
+    grid-template-columns: 100%;
+  }
 }
 
 .menu__left-side {
@@ -83,6 +87,10 @@
   background-color: rgba(0, 0, 0, 0.616);
   height: 99vh;
   padding: 0.5rem 3.75rem 0 3rem;
+  @media (max-width: 768px) {
+       
+    display: none;
+  }
 }
 
 .menu__header {
@@ -155,5 +163,24 @@
   text-decoration: none;
   font-size: 0.75rem;
   font-weight: var(--ligth);
+}
+
+/* headerlenguage-mobil */
+.header__language-mobile{
+  color: #000000;
+  position: absolute;
+  top:5%;
+  right: 10%;
+  a{
+    text-decoration: none;
+    width: 2rem;
+    margin-right: 2rem;
+    border: solid 2px var(--black-2);
+    padding: 0.5rem;
+    border-radius: 50%;
+    b{
+      color: #000000
+    }
+  }
 }
 
