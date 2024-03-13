@@ -1,0 +1,80 @@
+$font-family: 'Arial', sans-serif; // O la fuente que prefieras
+$primary-color: #000; // Cambia esto por el color principal de tu tema
+$secondary-color: #fff; // El color de fondo del datepicker
+$accent-color: #ff6b6b; // El color para los días seleccionados o hover
+
+.widget__field {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  
+  .react-datepicker-wrapper {
+    .react-datepicker__input-container {
+      input {
+        font-family: $font-family;
+        text-align: center;
+        background-color: transparent;
+        border: none;
+        font-size: 1.5em;
+        font-weight: bold;
+        
+        &.react-datepicker-ignore-onclickoutside {
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+  
+  .react-datepicker {
+    border: none;
+    background-color: $secondary-color;
+    font-family: $font-family;
+    
+    &__navigation {
+      top: 10px;
+      
+      &--previous,
+      &--next {
+        &::before {
+          border-color: $primary-color;
+        }
+      }
+    }
+    
+    &__month-container {
+      width: 100%;
+    }
+    
+    &__header {
+      background-color: $secondary-color;
+      border-bottom: none;
+    }
+    
+    &__current-month {
+      font-size: 1em;
+    }
+    
+    &__day-name, &__day {
+      color: $primary-color;
+      margin: 0.4em;
+      
+      &:hover {
+        background-color: $accent-color;
+        border-radius: 50%;
+        color: $secondary-color;
+      }
+    }
+    
+    &__day--selected,
+    &__day--in-selecting-range,
+    &__day--in-range {
+      background-color: $accent-color;
+      border-radius: 50%;
+      color: $secondary-color;
+    }
+  }
+}
+
+

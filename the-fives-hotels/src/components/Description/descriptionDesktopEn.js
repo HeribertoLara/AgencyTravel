@@ -23,7 +23,7 @@ export default function DescriptionDesktopEn(props) {
           src="/assets/ocean.avif"
           alt="palmers-sea"
           className="caribe-palmers"
-          layout="fill"
+          fill
         /> 
       </figure>
       <article className="caribe__text">

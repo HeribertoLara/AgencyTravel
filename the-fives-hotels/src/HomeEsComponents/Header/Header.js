@@ -4,6 +4,7 @@ import "../../components/Header/Header.css";
 import { useEffect, useState } from "react";
 import PreCheckin from "./PreCheckin/PreCheckinEs";
 import Hamburguer from "./Hamburguer/Hamburguer";
+import Link from "next/link";
 
 const Header = ({isOpen, setIsOpen}) => {
 
@@ -42,7 +43,9 @@ const Header = ({isOpen, setIsOpen}) => {
           <p className={scroll?"":"color__white"}>OFERTAS ESPECIALES</p>
         </a>
       </section>
-      <section className="header__logo">
+      <Link
+        href="/es" 
+        className="header__logo">
         <Image
           className={scroll?"fill__white":""}
           src="/assets/logo.svg"
@@ -50,7 +53,7 @@ const Header = ({isOpen, setIsOpen}) => {
           width={135}
           height={110}
         />
-      </section>
+      </Link>
       <section className="header__phone ">
         <a href="tel:+11234567890"> 
           <p className={scroll?"":"color__white"}>USA & CAN:</p> 
@@ -62,17 +65,17 @@ const Header = ({isOpen, setIsOpen}) => {
         </a>
       </section>
       <section className="header__language ">
-        <a href="#" className={scroll?"border__black":"border__white"}>
+        <Link href="/" className={scroll?"border__black":"border__white"}>
           <b className={scroll?"":"color__white"}>
             EN
           </b>
-        </a>
-        <a href="#">
+        </Link>
+        <Link href="/es">
           <b className={scroll?"":"color__white"}>
           
             ES
           </b>
-        </a>
+        </Link>
       </section>
       <section className="header__help">
         <button className={scroll?"border__black":"border__white"}>

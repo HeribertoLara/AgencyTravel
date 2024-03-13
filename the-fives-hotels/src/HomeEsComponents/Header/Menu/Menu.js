@@ -213,12 +213,12 @@ export default function Menu({ setIsOpen, isOpen }) {
           <p>CLOSE</p>
         </button>
         <section className="header__language-mobile ">
-            <a href="#" >
+            <Link href="/" >
               <b>EN</b>
-            </a>
-            <a href="#">
+            </Link>
+            <Link href="#">
               <b>ES</b>
-            </a>
+            </Link>
         </section>
         <Droplist
           className="menu__droplist"
@@ -279,12 +279,12 @@ export default function Menu({ setIsOpen, isOpen }) {
             </a>
           </section>
           <section className="header__language ">
-            <a href="#" className="border__white">
+            <Link href="/" className="border__white">
               <b className="color__white">EN</b>
-            </a>
-            <a href="#">
+            </Link>
+            <Link href="/es">
               <b className="color__white">ES</b>
-            </a>
+            </Link>
           </section>
           <section className="header__help">
             <button className={"border__white"}>

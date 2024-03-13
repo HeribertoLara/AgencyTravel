@@ -4,6 +4,8 @@ import "./Header.css";
 import { useEffect, useState } from "react";
 import PreCheckin from "../PreCheckin/PreCheckin";
 import Hamburguer from "../Hamburguer/Hamburguer";
+import Link from "next/link";
+import Widget from "./Widget/widget";
 
 const Header = ({isOpen, setIsOpen}) => {
 
@@ -43,13 +45,15 @@ const Header = ({isOpen, setIsOpen}) => {
         </a>
       </section>
       <section className="header__logo">
+        <Link href="/">
         <Image
           className={scroll?"fill__white":""}
           src="/assets/logo.svg"
           alt="The Fives Hotels logo"
           width={135}
           height={110}
-        />
+          />
+          </Link>
       </section>
       <section className="header__phone ">
         <a href="tel:+11234567890"> 
@@ -62,17 +66,17 @@ const Header = ({isOpen, setIsOpen}) => {
         </a>
       </section>
       <section className="header__language ">
-        <a href="#" className={scroll?"border__black":"border__white"}>
+        <Link href="/" className={scroll?"border__black":"border__white"}>
           <b className={scroll?"":"color__white"}>
             EN
           </b>
-        </a>
-        <a href="#">
+        </Link>
+        <Link href="/es">
           <b className={scroll?"":"color__white"}>
           
             ES
           </b>
-        </a>
+        </Link>
       </section>
       <section className="header__help">
         <button className={scroll?"border__black":"border__white"}>
@@ -85,6 +89,7 @@ const Header = ({isOpen, setIsOpen}) => {
           />
         </button>
       </section> 
+      <Widget/>
     </header>
   );
 };
