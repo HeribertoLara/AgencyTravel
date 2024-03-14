@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import "./widget.scss"
 import SelectHotel from './SelectHotel/SelectHotel';
 import Dates from './Dates/Dates';
@@ -17,8 +17,13 @@ const BookingForm = () => {
   const [departureDate, setDepartureDate] = useState(addDays(new Date(), 3));
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState([]);
+  const [numberChilds, setNumberChilds] = useState(0)
   const [promoCode, setPromoCode] = useState('');
   const [error, setError] = useState('');
+  
+
+
+
 
 
 
@@ -34,7 +39,12 @@ const handleSubmit = (event) => {
     let formattedArrivalDate = format(arrivalDate, 'yyyy-MM-dd');
     let formattedDepartureDate = format(departureDate, 'yyyy-MM-dd');
 
-    let url = `${baseUrl}/${hotel}/${formattedArrivalDate}/${formattedDepartureDate}/${adults};${children};5`;
+    let url = `${baseUrl}/${hotel}/${formattedArrivalDate}/${formattedDepartureDate}/${adults}`;
+
+    if (children.length > 0) {
+      const childrenParams = children.join(';'); // Une los elementos del arreglo children con ';'
+      url += `;${childrenParams}`; // Agrega los parámetros de los niños a la URL
+    }
 
     if (promoCode) {
       url += `&PC=${promoCode}`;
@@ -64,10 +74,19 @@ const handleSubmit = (event) => {
         setAdults={setAdults} 
         children={children} 
         setChildren={setChildren}
+        numberChilds={numberChilds}
+        setNumberChilds={setNumberChilds}
       />
       <div className="widget__field">
-        <input type="text" 
-            name="promoCode" id="promoCode" placeholder="Código promocional" value={promoCode} onChange={(e) => setPromoCode(e.target.value)} className="widget__input"/>
+        <input 
+          type="text" 
+          name="promoCode" 
+          id="promoCode" 
+          placeholder="Código promocional" 
+          value={promoCode} 
+          onChange={(e) => setPromoCode(e.target.value)} 
+          className="widget__input"
+        />
       </div>
       <div className="widget__field">
         <button type="submit" className="widget__button">Reservar ahora</button>

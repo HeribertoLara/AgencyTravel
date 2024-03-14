@@ -34,8 +34,6 @@ export default function Dates({ departureDate, setDepartureDate, arrivalDate, se
     };
 
     useEffect(()=>{
-        console.log(arrivalDate)
-        console.log(departureDate)
         if (datesSelected) {
             closeModal();
             setDatesSelected(false);
