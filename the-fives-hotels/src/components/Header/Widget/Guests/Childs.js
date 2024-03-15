@@ -5,15 +5,19 @@ export default function Childs({
   setChildren,
   numberChilds,
   setNumberChilds,
+  maxNumberChilds,
 }) {
 
   useEffect(() => {
-    console.log(children);
+
+    console.log(maxNumberChilds)
+    console.log(children)
+
   }, [children]);
 
   const incrementChilds = (currentValue, setValue) => {
-    setValue((prevValue) => (prevValue < 10 ? prevValue + 1 : prevValue));
-    if (currentValue < 10) {
+    setValue((prevValue) => (prevValue < maxNumberChilds ? prevValue + 1 : prevValue));
+    if (currentValue < maxNumberChilds) {
       setChildren([...children, 0]);
       console.log(children);
     }

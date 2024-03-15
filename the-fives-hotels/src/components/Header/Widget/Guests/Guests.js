@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Adults from "./Adults";
 import Childs from "./Childs";
 
-export default function Guests({ adults, setAdults, children, setChildren, numberChilds, setNumberChilds }) {
+export default function Guests({ adults, setAdults, children, setChildren, numberChilds, setNumberChilds, maxNumberChilds }) {
   const [openModal, setOpenModal] = useState(false);
 
   return (
@@ -31,6 +31,7 @@ export default function Guests({ adults, setAdults, children, setChildren, numbe
             setChildren={setChildren}
             numberChilds={numberChilds}
             setNumberChilds={setNumberChilds}
+            maxNumberChilds={maxNumberChilds}
             
             />
         </section>

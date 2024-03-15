@@ -1,5 +1,4 @@
-import { set } from 'date-fns';
-import React, { useEffect } from 'react'
+
 
 export default function SelectHotel({hotel, setHotel}) {
     
@@ -26,10 +25,7 @@ export default function SelectHotel({hotel, setHotel}) {
         },
       ];
 
-      useEffect(()=>{
-        console.log(hotel)
-      },[hotel])
-
+     
     return (
         <>
         <select name="hotel" id="hotel" value={hotel} onChange={(e) => setHotel(e.target.value)} className="widget__select">
