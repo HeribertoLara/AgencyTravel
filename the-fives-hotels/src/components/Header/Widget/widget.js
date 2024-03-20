@@ -1,10 +1,14 @@
+/* hooks */
 import { useState, useEffect } from "react";
-import "./widget.scss";
-import SelectHotel from "./SelectHotel/SelectHotel";
+/* components */
 import Dates from "./Dates/Dates";
-import { addDays } from "date-fns";
-import { format } from "date-fns";
 import Guests from "./Guests/Guests";
+import SelectHotel from "./SelectHotel/SelectHotel";
+import SwitchToogle from "./SwitchToogle/SwitchToogle";
+/* libraries */
+import { format } from "date-fns";
+import { addDays } from "date-fns";
+import "./widget.scss";
 
 
 const BookingForm = () => {
@@ -12,57 +16,71 @@ const BookingForm = () => {
     value: "fivesbeach,fivesdowntown,fivesmorelos,fivesresidence,tbbtf",
     label: "ALL HOTELS",
   });
+  /* valor seteado con el segundo hotel */
+  const[reservHotel, setReservHotel] = useState({
+    value: "the-fives-downtown-hotel-and-residences",
+    label: "THE FIVES DOWNTOWN",
+    noHotel: "10815",
+    location: "playa-del-carmen-mexico",
+  },)
+  /* States */
   const [arrivalDate, setArrivalDate] = useState(new Date());
   const [departureDate, setDepartureDate] = useState(addDays(new Date(), 3));
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState([]);
   const [numberChilds, setNumberChilds] = useState(0);
+  const [maxNumberChilds, setMaxNumberChilds] = useState(8)
   const [promoCode, setPromoCode] = useState("");
   const [error, setError] = useState("");
-  const [maxNumberChilds, setMaxNumberChilds] = useState(8)
+  const [ withFly, setWithFly] = useState(false)
+  const [city, setCity] = useState(''); // Vinculación con el valor del input
+  const [airportsData, setAirportsData] = useState([]);
+  const [airportError, setAirportError] = useState(false);
+  const [ urlBase, setUrlBase ] = useState(  "https://www.reservhotel.com/" )
+  
 
-  const setNumberChild = (hotelValue) => {
-    if (hotelValue === "fivesdowntown") {
-      setMaxNumberChilds(2) ;
-    } else {
-      setMaxNumberChilds(8); // Valor predeterminado para otros hoteles
-    }
-  };
-
+  
   useEffect(()=>{
-    
-   setNumberChild(hotel)
-
-  },[hotel])
+    const newMax = hotel.value === "fivesdowntown" ? 2 : 8;
+    setMaxNumberChilds(newMax);
+    withFly? setUrlBase(  "https://www.reservhotel.com/" ):setUrlBase("https://booking.thefiveshotels.com/en/bookcore/availability")
+   
+  },[hotel, withFly])
   
 
   const handleSubmit = (event) => {
     event.preventDefault();
     try {
       if (!hotel || !arrivalDate || !departureDate || adults <= 0) {
-        throw new Error(
+        setError(
           "Por favor, completa todos los campos obligatorios y asegúrate de que la cantidad de adultos sea al menos 1."
         );
+        return
       }
-      let baseUrl =
-        "https://booking.thefiveshotels.com/en/bookcore/availability";
 
-      let formattedArrivalDate = format(arrivalDate, "yyyy-MM-dd");
-      let formattedDepartureDate = format(departureDate, "yyyy-MM-dd");
+      const dateFormat = withFly ? "dd-MMM-yy" : "yyyy-MM-dd";
+        
+      const formattedArrivalDate = format(arrivalDate, dateFormat);
+      const formattedDepartureDate = format(departureDate, dateFormat);
 
-      let url = `${baseUrl}/${hotel}/${formattedArrivalDate}/${formattedDepartureDate}/${adults}`;
+      let url = withFly
+     
+      ? `${urlBase}/${reservHotel.location}/${reservHotel.value}/booking-engine/ibe5.main?hotel=${reservHotel.noHotel}&aDate=${formattedArrivalDate}&dDate=${formattedDepartureDate}&airport=OKC&airportTo=CUN&adults=${adults}&child=${children.length}&child=2&rooms=1&source=&show_ta_comm=&agent_fee=&abtest=&aff=&currency=&agent=&usr=&lang=1&showHotel=&rategroup=&rate=&sub_source=&PCC=&AirportDep=&PC=DGMAX&view_type=&groupId=&childages=4&childages=6
+      `
+      : `${urlBase}/${hotel.value}/${formattedArrivalDate}/${formattedDepartureDate}/${adults}`;
+
 
       if (children.length > 0) {
+
         const childrenParams = children.join(";");
         url += `;${childrenParams}`;
       }
 
       if (promoCode) {
-        url += `&PC=${promoCode}`;
+        url += `?cp=${promoCode}`;
       }
 
       window.open(url, "_blank");
-      console.log(url);
     } catch (error) {
       setError(error.message);
     }
@@ -71,8 +89,26 @@ const BookingForm = () => {
   return (
     <form onSubmit={handleSubmit} className="widget">
       <div className="widget__field">
-        <SelectHotel hotel={hotel} setHotel={setHotel} />
+        <SelectHotel 
+          hotel={hotel} 
+          setHotel={setHotel}  
+          withFly={withFly} 
+          reservHotel={reservHotel} 
+          setReservHotel={setReservHotel}
+        />
       </div>
+      {/* boton toogle */}
+      <SwitchToogle 
+        withFly={withFly} 
+        setWithFly={setWithFly}
+        city={city}
+        setCity={setCity} // Vinculación con el valor del input
+        airportsData={airportsData}
+        setAirportsData={setAirportsData}
+        airportError={airportError}
+        setAirportError={setAirportError}
+
+        />
       <Dates
         arrivalDate={arrivalDate}
         setArrivalDate={setArrivalDate}
@@ -93,7 +129,7 @@ const BookingForm = () => {
           type="text"
           name="promoCode"
           id="promoCode"
-          placeholder="Código promocional"
+          placeholder="PROMO CODE"
           value={promoCode}
           onChange={(e) => setPromoCode(e.target.value)}
           className="widget__input"

@@ -1,0 +1,20 @@
+/* components/ToggleSwitch.module.css */
+
+.react-toggle {
+  &-thumb {
+    // Ajusta la sombra y el borde del botón de toggle
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  &-track {
+    // Ajusta la sombra y el borde de la pista de toggle
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  &:focus:not(:hover) {
+    // Elimina el contorno que aparece al enfocar el elemento, si es necesario
+    outline: none !important;
+  }
+}

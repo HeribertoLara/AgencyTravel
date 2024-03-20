@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 export default function Childs({
   children,
   setChildren,
@@ -7,13 +5,6 @@ export default function Childs({
   setNumberChilds,
   maxNumberChilds,
 }) {
-
-  useEffect(() => {
-
-    console.log(maxNumberChilds)
-    console.log(children)
-
-  }, [children]);
 
   const incrementChilds = (currentValue, setValue) => {
     setValue((prevValue) => (prevValue < maxNumberChilds ? prevValue + 1 : prevValue));
