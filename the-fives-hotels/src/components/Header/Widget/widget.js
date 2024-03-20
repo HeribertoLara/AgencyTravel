@@ -43,7 +43,7 @@ const BookingForm = () => {
   useEffect(()=>{
     const newMax = hotel.value === "fivesdowntown" ? 2 : 8;
     setMaxNumberChilds(newMax);
-    withFly? setUrlBase(  "https://www.reservhotel.com/" ):setUrlBase("https://booking.thefiveshotels.com/en/bookcore/availability")
+    withFly? setUrlBase(  "https://www.reservhotel.com" ):setUrlBase("https://booking.thefiveshotels.com/en/bookcore/availability")
    
   },[hotel, withFly])
   
@@ -65,18 +65,20 @@ const BookingForm = () => {
 
       let url = withFly
      
-      ? `${urlBase}/${reservHotel.location}/${reservHotel.value}/booking-engine/ibe5.main?hotel=${reservHotel.noHotel}&aDate=${formattedArrivalDate}&dDate=${formattedDepartureDate}&airport=OKC&airportTo=CUN&adults=${adults}&child=${children.length}&child=2&rooms=1&source=&show_ta_comm=&agent_fee=&abtest=&aff=&currency=&agent=&usr=&lang=1&showHotel=&rategroup=&rate=&sub_source=&PCC=&AirportDep=&PC=DGMAX&view_type=&groupId=&childages=4&childages=6
-      `
+      ? `${urlBase}/${reservHotel.location}/${reservHotel.value}/booking-engine/ibe5.main?hotel=${reservHotel.noHotel}&aDate=${formattedArrivalDate}&dDate=${formattedDepartureDate}&airport=OKC&airportTo=CUN&adults=${adults}&child=${children.length}&child=2&rooms=1&source=&show_ta_comm=&agent_fee=&abtest=&aff=&currency=&agent=&usr=&lang=1&showHotel=&rategroup=&rate=&sub_source=&PCC=&AirportDep=&PC=${promoCode}&view_type=&groupId=`
       : `${urlBase}/${hotel.value}/${formattedArrivalDate}/${formattedDepartureDate}/${adults}`;
 
 
-      if (children.length > 0) {
+      if (children.length > 0 && !withFly) {
 
         const childrenParams = children.join(";");
         url += `;${childrenParams}`;
+      } else{
+        const childrenAges = children.map(age => `childages=${age}`).join("&");
+        url += `&${childrenAges}`;
       }
 
-      if (promoCode) {
+      if (promoCode && !withFly) {
         url += `?cp=${promoCode}`;
       }
 
