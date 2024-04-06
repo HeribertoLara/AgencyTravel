@@ -1,24 +1,29 @@
 /* hooks */
 import { useState, useEffect } from "react";
 /* components */
-import Dates from "./Dates/Dates";
-import Guests from "./Guests/Guests";
-import SelectHotel from "./SelectHotel/SelectHotel";
-import SwitchToogle from "./SwitchToogle/SwitchToogle";
+import Dates from "./../Dates/Dates";
+import Guests from "./../Guests/Guests";
+import SelectHotel from "./../SelectHotel/SelectHotel";
+import SwitchToogle from "./../SwitchToogle/SwitchToogle";
 /* libraries */
 import { format } from "date-fns";
 import { addDays } from "date-fns";
-import "./widget.scss";
+/* import "./../widget.scss"; */
 import Image from "next/image";
 
 /* OPCIONES  DE HOTELES */
-import hotelOptions from "./hotelOptions";
-import reservHotelOptions from "./reservHotelOptions";
+import hotelOptions from "./../hotelOptions";
+import reservHotelOptions from "./../reservHotelOptions";
 /* Notificaciones */
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const BookingForm = () => {
+/* styles */
+
+import "./mobileWidget.scss";
+
+const MobileWidget = () => {
+  const [isActiveWidget, setIsActiveWidget] = useState(true);
   const [hotel, setHotel] = useState(hotelOptions[0]);
   /* valor seteado con el segundo hotel */
   const [reservHotel, setReservHotel] = useState(reservHotelOptions[0]);
@@ -77,7 +82,13 @@ const BookingForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     try {
-      if (reservHotel.value===""||!hotel.value==="" || !arrivalDate || !departureDate || adults <= 0) {
+      if (
+        reservHotel.value === "" ||
+        !hotel.value === "" ||
+        !arrivalDate ||
+        !departureDate ||
+        adults <= 0
+      ) {
         setError(
           "Por favor, completa todos los campos obligatorios y asegúrate de que la cantidad de adultos sea al menos 1."
         );
@@ -128,8 +139,102 @@ const BookingForm = () => {
     }
   };
 
-  return (
-    <form onSubmit={handleSubmit} className="widget">
+  return isActiveWidget ? (
+    <section className={`widgetm__container ${isActiveWidget ? "widget-active" : ""}`}>
+      
+
+      <button
+        className="widgetm__backBtn"
+        onClick={() => setIsActiveWidget(false)}
+      >
+        <Image
+          src="/assets/arrow_bread_crumb.svg"
+          width={20}
+          height={20}
+          className="widget--back__btn--image"
+          alt="button back"
+        />
+        <aside>BACK</aside>
+      </button>
+
+      <form onSubmit={handleSubmit} className="widgetm__form">
+        <section className="widgetm--form__container">
+          <SelectHotel
+            hotel={hotel}
+            setHotel={setHotel}
+            withFly={withFly}
+            reservHotel={reservHotel}
+            setReservHotel={setReservHotel}
+          />
+
+          <SwitchToogle
+            withFly={withFly}
+            setWithFly={setWithFly}
+            city={city}
+            setCity={setCity}
+            airportsData={airportsData}
+            setAirportsData={setAirportsData}
+            airportError={airportError}
+            setAirportError={setAirportError}
+            onWithFlyChange={handleWithFlyChange}
+            onAirportSelectValidation={handleAirportError}
+            selectedOption={selectedOption}
+            setSelectedOption={setSelectedOption}
+          />
+
+          <Dates
+            arrivalDate={arrivalDate}
+            setArrivalDate={setArrivalDate}
+            departureDate={departureDate}
+            setDepartureDate={setDepartureDate}
+          />
+          <Guests
+            adults={adults}
+            setAdults={setAdults}
+            children={children}
+            setChildren={setChildren}
+            numberChilds={numberChilds}
+            setNumberChilds={setNumberChilds}
+            maxNumberChilds={maxNumberChilds}
+          />
+          <section className="widgetm__field--mobile">
+            <label>PROMO CODE</label>
+            <div className="widget__field-input">
+              <Image
+                src="/assets/Descuento.svg"
+                width={18}
+                height={18}
+                alt="best-price-icon"
+                className="wigetm__field__best--price"
+              />
+              <input
+                type="text"
+                name="promoCode"
+                id="promoCode"
+                placeholder={""}
+                value={promoCode}
+                onChange={(e) => setPromoCode(e.target.value)}
+                className="widget__input"
+              />
+            </div>
+          </section>
+          <div className="widgetm__field">
+            <button type="submit" className="widgetm__button">
+              BOOK NOW
+            </button>
+            <aside className="widgetm__field__bestprice--legend">
+              <Image
+                src="/assets/best_price.svg"
+                width={20}
+                height={20}
+                alt="best-price-icon"
+                className="wigetm__field__bestprice"
+              />
+              <p className="widgetm__field__bestprice">BEST PRICE GUARANTEE</p>
+            </aside>
+          </div>
+        </section>
+      </form>
       <ToastContainer
         position="top-center"
         autoClose={5000}
@@ -141,84 +246,15 @@ const BookingForm = () => {
         draggable
         pauseOnHover
       />
-      <section className="widget__form--container">
-        <SelectHotel
-          hotel={hotel}
-          setHotel={setHotel}
-          withFly={withFly}
-          reservHotel={reservHotel}
-          setReservHotel={setReservHotel}
-        />
-
-        {/* boton toogle */}
-        <SwitchToogle
-          withFly={withFly}
-          setWithFly={setWithFly}
-          city={city}
-          setCity={setCity}
-          airportsData={airportsData}
-          setAirportsData={setAirportsData}
-          airportError={airportError}
-          setAirportError={setAirportError}
-          onWithFlyChange={handleWithFlyChange}
-          onAirportSelectValidation={handleAirportError}
-          selectedOption={selectedOption}
-          setSelectedOption={setSelectedOption}
-        />
-        <Dates
-          arrivalDate={arrivalDate}
-          setArrivalDate={setArrivalDate}
-          departureDate={departureDate}
-          setDepartureDate={setDepartureDate}
-        />
-        <Guests
-          adults={adults}
-          setAdults={setAdults}
-          children={children}
-          setChildren={setChildren}
-          numberChilds={numberChilds}
-          setNumberChilds={setNumberChilds}
-          maxNumberChilds={maxNumberChilds}
-        />
-        <section className="widget__field--pc">
-          <label>PROMO CODE</label>
-          <div className="widget__field-input">
-            <Image
-              src="/assets/Descuento.svg"
-              width={18}
-              height={18}
-              alt="best-price-icon"
-              className="wiget__field--best-price"
-            />
-            <input
-              type="text"
-              name="promoCode"
-              id="promoCode"
-              placeholder={""}
-              value={promoCode}
-              onChange={(e) => setPromoCode(e.target.value)}
-              className="widget__input"
-            />
-          </div>
-        </section>
-        <div className="widget__field">
-          <button type="submit" className="widget__button">
-            BOOK NOW
-          </button>
-          <aside className="widget__field--best-price-legend">
-            <Image
-              src="/assets/best_price.svg"
-              width={15}
-              height={15}
-              alt="best-price-icon"
-              className="wiget__field--best-price"
-            />
-            <p className="widget__field--best-price">BEST PRICE GUARANTEE</p>
-          </aside>
-        </div>
-      </section>
-    </form>
+    </section>
+  ) : (
+    <button
+      type="button"
+      onClick={() => setIsActiveWidget(true)}
+      className="widgetm__btn-booknow"
+    >
+      BOOK NOW
+    </button>
   );
 };
-
-export default BookingForm;
+export default MobileWidget;

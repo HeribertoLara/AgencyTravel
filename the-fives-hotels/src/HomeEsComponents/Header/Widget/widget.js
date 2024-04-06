@@ -23,8 +23,8 @@ const BookingForm = () => {
   /* valor seteado con el segundo hotel */
   const [reservHotel, setReservHotel] = useState(reservHotelOptions[0]);
   /* States */
-  const [arrivalDate, setArrivalDate] = useState(addDays(new Date(), 3));
-  const [departureDate, setDepartureDate] = useState(addDays(new Date(), 6));
+  const [arrivalDate, setArrivalDate] = useState(new Date());
+  const [departureDate, setDepartureDate] = useState(addDays(new Date(), 3));
   const [adults, setAdults] = useState(2);
   const [children, setChildren] = useState([]);
   const [numberChilds, setNumberChilds] = useState(0);

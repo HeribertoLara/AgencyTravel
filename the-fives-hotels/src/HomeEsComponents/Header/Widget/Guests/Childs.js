@@ -17,10 +17,11 @@ export default function Childs({
     /* children es una prop que es un array vacio  vamos a agregar  un 0 a este array que va a ser igual al numberChilds */
   };
 
-  const decrementChilds = () => {
-    if (numberChilds > 0) {
-      setNumberChilds(prevValue => prevValue - 1);
-      setChildren(prevChildren => prevChildren.slice(0, -1)); // Elimina el último niño
+  const decrementChilds = ( setValue, children, setChildren) => {
+    setValue((prevValue) => Math.max(0, prevValue - 1));
+
+    if (children.length > 0) {
+      setChildren((prevChildren) => prevChildren.slice(0, -1));
     }
   };
   const handleAgeChange = (index, newAge) => {
@@ -37,7 +38,9 @@ export default function Childs({
       <button
         type="button"
         className="modal-guest__button-minus"
-        onClick={decrementChilds}
+        onClick={() =>
+          decrementChilds(numberChilds, setNumberChilds, children, setChildren)
+        }
         >
         -
       </button>

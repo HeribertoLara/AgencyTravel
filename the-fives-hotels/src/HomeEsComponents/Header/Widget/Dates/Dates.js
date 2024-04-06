@@ -59,7 +59,7 @@ export default function Dates({
   return (
     <article className="widget__field--calendary">
       <label className="widget__calendary--label">
-        <span>DATE </span>
+        <span>DATES </span>
 
         <button type="button" className="widget__field--button" onClick={openModal}>
         {formatDate(arrivalDate)} 

@@ -1,16 +1,26 @@
 "use client";
-import Image from "next/image";
 import "./Header.css";
+/* hooks */
 import { useEffect, useState } from "react";
+import useWindowDimensions from "../../hooks/useWindowDimensions"
+/* react components */
+import Image from "next/image";
+import Link from "next/link";
+/* widgets */
+import Widget from "./Widget/widget";
+import MobileWidget from "./Widget/MobileWidget/MobileWidget";
+/* auxiliar components */
 import PreCheckin from "../PreCheckin/PreCheckin";
 import Hamburguer from "../Hamburguer/Hamburguer";
-import Link from "next/link";
-import Widget from "./Widget/widget";
 
 const Header = ({ isOpen, setIsOpen }) => {
   const [scroll, setScroll] = useState(false);
+  const { width } = useWindowDimensions(); // Obtiene el ancho de la ventana.
+  const breakpoint = 768; // Establece el punto de corte para móviles.
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
     /* detect when the user use scroll down */
     const onScroll = () => {
       const scrollCheck = window.scrollY > 0;
@@ -25,7 +35,7 @@ const Header = ({ isOpen, setIsOpen }) => {
 
   return (
     <section>
-      {/* <header
+      {<header
         className={scroll ? "header header__white" : "header header__dark"}
       >
         <Hamburguer scroll={scroll} isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -88,8 +98,9 @@ const Header = ({ isOpen, setIsOpen }) => {
             />
           </button>
         </section>
-      </header> */}
-        <Widget />
+      </header> }
+        {/* Renderiza condicionalmente Widget o MobileWidget basado en el ancho de la ventana. */}
+        {isClient && (width > breakpoint ? <Widget /> : <MobileWidget />)}
     </section>
   );
 };

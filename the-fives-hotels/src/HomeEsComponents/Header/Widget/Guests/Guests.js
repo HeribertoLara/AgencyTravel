@@ -32,12 +32,13 @@ export default function Guests({
           </aside>
         </button>
       </label>
-      
+      {/* ) : (
+        
+      )} */}
       <br />
 
       {openModal && (
-        <section
-            className="modal-guest">
+        <section className="modal-guest">
           <h4>
             <Image 
               src={"/assets/Usuario.svg"} 
@@ -51,7 +52,7 @@ export default function Guests({
             setAdults={setAdults}
             className="modal-guest__adults"
           />
-         <Childs
+          <Childs
             children={children}
             setChildren={setChildren}
             numberChilds={numberChilds}
@@ -59,7 +60,7 @@ export default function Guests({
             maxNumberChilds={maxNumberChilds}
             className="modal-guest__children"
           />
-         <section className="guests-container__actions">
+          <section className="guests-container__actions">
             <button
               type="button"
               className="guests-container__button-save"
@@ -73,7 +74,7 @@ export default function Guests({
               onClick={() => setOpenModal(false)}
             >
               CANCEL
-            </button> 
+            </button>
           </section>
         </section>
       )}

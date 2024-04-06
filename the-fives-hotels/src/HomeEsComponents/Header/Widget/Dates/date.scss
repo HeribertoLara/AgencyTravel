@@ -12,22 +12,13 @@
   
 
 }
-@media (max-width: 768px) {
-  .react-datepicker__header {
-    width:97vw; // Ancho reducido para móviles
-  }
-
-  .react-datepicker {
-    width: 350px; // Ancho reducido para móviles
-  }
-}
 
 // Estilos para la fecha seleccionada y el rango de fechas
 .react-datepicker {
   position: fixed; 
     z-index: 5; 
     bottom: 0; 
-    top: 55%; 
+    top: 50%; 
     left: 50%; 
     transform: translate(-50%, -35%);
     width: 400px; // Ancho del DatePicker
