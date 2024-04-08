@@ -33,15 +33,9 @@ export default function DescriptionDesktopEn(props) {
               ENCANTO SENSORIAL DEL CARIBE MEXICANO
             </h2>
             <p className="caribe__description">
-              Al elegir hospedarte en The Fives Hotels & Residences, te
-              sumergirás en una exclusiva colección de hoteles que te llevarán a
-              vivir unas espectaculares vacaciones en México, las cuales
-              trascenderán el significado de hospitalidad al cautivar cada uno
-              de tus sentidos mediante el distintivo concepto "ALL SENSES
-              INCLUSIVE". Cada suite estilo residencial, ya sea de una, dos o
-              tres habitaciones, supera los estándares convencionales y desafía
-              las expectativas tradicionales de un hotel frente al mar.
-            </p>
+  Al elegir hospedarte en The Fives Hotels &amp; Residences, te sumergirás en una exclusiva colección de hoteles que te llevarán a vivir unas espectaculares vacaciones en México, las cuales trascenderán el significado de hospitalidad al cautivar cada uno de tus sentidos mediante el distintivo concepto &quot;ALL SENSES INCLUSIVE&quot;. Cada suite estilo residencial, ya sea de una, dos o tres habitaciones, supera los estándares convencionales y desafía las expectativas tradicionales de un hotel frente al mar.
+</p>
+
             <p className="caribe__description">
               Nuestra misión es crear experiencias que estimulen tus sentidos y
               te lleven a experimentar un viaje multisensorial al hospedarte en

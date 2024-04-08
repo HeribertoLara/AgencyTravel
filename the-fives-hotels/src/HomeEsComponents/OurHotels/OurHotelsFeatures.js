@@ -1,3 +1,4 @@
+import Image from "next/image";
 export const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -30,7 +31,7 @@ export const responsive = {
       return (
         <button onClick={() => handleClick()} className="carousel-button-left">
           <span className="arrow_content_prev">
-            <img src={arrowLeft} alt="arrow_prev" />
+          <Image src={arrowLeft} alt="arrow_prev"  width={30} height={30}/>
           </span>
         </button>
       );
@@ -49,7 +50,7 @@ export const responsive = {
         return (
           <button onClick={() => handleClick()} className="carousel-button-right">
             <span className="arrow_content_next">
-              <img src={arrowRigth} alt="arrow_next" />
+            <Image src={arrowRigth} alt="arrow_next"  width={30} height={30}/>
             </span>
           </button>
         );

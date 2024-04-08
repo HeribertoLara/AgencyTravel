@@ -92,7 +92,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src="/assets/fb_icon.svg" width={20} height={20} />
+                <Image src="/assets/fb_icon.svg" width={20} height={20} alt="social"/>
               </a>
             </li>
             <li>
@@ -101,7 +101,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src="/assets/insta_icon.svg" width={20} height={20} />
+                <Image src="/assets/insta_icon.svg" width={20} height={20} alt="social"/>
               </a>
             </li>
             <li>
@@ -110,7 +110,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src="/assets/yt_icon.svg" width={20} height={20} />
+                <Image src="/assets/yt_icon.svg" width={20} height={20} alt="social"/>
               </a>
             </li>
             <li>
@@ -119,7 +119,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src="/assets/twt_icon.svg" width={20} height={20} />
+                <Image src="/assets/twt_icon.svg" width={20} height={20} alt="social" />
               </a>
             </li>
             <li>
@@ -128,7 +128,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src="/assets/in_icon.svg" width={20} height={20} />
+                <Image src="/assets/in_icon.svg" width={20} height={20} alt="social"/>
               </a>
             </li>
           </ul>
