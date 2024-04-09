@@ -7,9 +7,9 @@ import DescriptionEn from '../../HomeEsComponents/Description/DescriptionEn'
 import OurHotel from '../../HomeEsComponents/OurHotels/OurHotel';
 import Residence from '../../HomeEsComponents/Residence/Residence'
 import Services from 'app/HomeEsComponents/Services/Services'
-import Faqs from 'app/HomeEsComponents/FaqsTwo/FaqsTwo'
+import Faqs from 'app/HomeEsComponents/Faqs/Faqs'
 import Footer from 'app/HomeEsComponents/Footer/Footer'
-import Sense from 'app/HomeEsComponents/Sense/SenseTwo'
+import Sense from 'app/HomeEsComponents/Sense/Sense'
 
 export default function Page(props) {
     

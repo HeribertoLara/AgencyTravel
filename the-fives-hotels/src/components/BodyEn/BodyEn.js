@@ -3,9 +3,9 @@ import BannerHomeEn from '../BannerHome/BannerHome'
 import DescriptionEn from '../Description/DescriptionEn'
 import OurHotel from '../OurHotels/OurHotel'
 import  Residence  from '../Residence/Residence'
-import Sense from '../SenseTwo/Sensetwo'
+import Sense from '../Sense/Sense'
 import Services from '../Services/Services'
-import Faqs from '../Faqs/Faqstwo'
+import Faqs from '../Faqs/Faqs'
 import Footer from '../Footer/Footer'
 
 
