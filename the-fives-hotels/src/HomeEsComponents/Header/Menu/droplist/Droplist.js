@@ -1,6 +1,6 @@
 "use client"
 import { useState } from 'react';
-import '../../../../components/droplist/Droplist.css'; 
+import '../../../../components/Droplist/Droplist.css'; 
 
 const DropList = ({ name, options }) => {
   

@@ -65,9 +65,10 @@ export default function Dates({
         {formatDate(arrivalDate)} 
         <Image 
           src="/assets/arrow_bread_crumb.svg"
-          width={10}
-          height={15}
+          width={22}
+          height={22}
           alt="icon fechas"
+          className="widget__mayor-icon"
         />
 
         {formatDate(departureDate)}

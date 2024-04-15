@@ -19,7 +19,6 @@ export default function SwitchToogle({
 
   const changeWithFly = ()=>{
     const newWithFlyValue = !withFly;
-   /*  setWithFly(newWithFlyValue); */
     onWithFlyChange(newWithFlyValue);
   }
 

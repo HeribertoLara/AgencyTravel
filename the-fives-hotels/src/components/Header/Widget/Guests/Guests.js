@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Adults from "./Adults";
 import Childs from "./Childs";
 import Image from "next/image";
 import "./Guest.scss";
 
 export default function Guests({
+  hotelLabel,
   adults,
   setAdults,
   children,
@@ -12,8 +13,12 @@ export default function Guests({
   numberChilds,
   setNumberChilds,
   maxNumberChilds,
+
 }) {
   const [openModal, setOpenModal] = useState(false);
+  useEffect(()=>{
+    console.log(hotelLabel)
+  },[hotelLabel])
 
   return (
     <article className="guests-container">
@@ -51,6 +56,8 @@ export default function Guests({
             setAdults={setAdults}
             className="modal-guest__adults"
           />
+          {
+          hotelLabel !== "THE FIVES BEACHFRONT BY THE FIVES" &&
          <Childs
             children={children}
             setChildren={setChildren}
@@ -58,7 +65,7 @@ export default function Guests({
             setNumberChilds={setNumberChilds}
             maxNumberChilds={maxNumberChilds}
             className="modal-guest__children"
-          />
+          />}
          <section className="guests-container__actions">
             <button
               type="button"

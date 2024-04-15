@@ -61,6 +61,7 @@
                     border: solid 1px var(--black);
                     border-radius: 2px;
                     width: 20rem;
+                    height: 2.5rem;
 
 
                     figure {
@@ -75,6 +76,9 @@
                         height: 2rem;
                         border: none;
                         background-color: var(--white-0);
+                        color:var(--black);
+                        font-size:var(--font-size-field-mobile);
+                      
                     }
 
                     .widget__select:focus {
@@ -94,7 +98,7 @@
             .switch-toggle__label {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                gap: 2rem;
+                gap: 7rem;
 
                 span {
                     font-size: 1rem;
@@ -126,6 +130,16 @@
                         position: relative;
                         box-sizing: border-box;
                         width: 100%;
+                    }
+                    .css-sg627z-placeholder {
+                        grid-area: 1 / 1 / 2 / 3;
+                        margin-left: 2px;
+                        margin-right: 2px;
+                        box-sizing: border-box;
+                        color:var(--black);
+                        font-size:var(--font-size-field-mobile);
+                        
+
                     }
 
                 }
@@ -190,6 +204,7 @@
         .widget__calendary--label {
             display: grid;
             place-items: left;
+            margin-top: 4rem;
             span {
               
               font-size: 1rem;
@@ -203,10 +218,14 @@
               background-color: var(--white);
               border: none;
               display: grid;
-              grid-template-columns: 1fr 1rem 1fr;
+              grid-template-columns: 1fr 3rem 1fr;
               place-items: left;
               padding: 0;
               width: 5rem;
+              .widget__mayor-icon{
+                grid-column: 2/3;
+                margin-left: 2rem;
+              }
               
               .widget__date {
                 display: grid;
@@ -269,10 +288,10 @@
         }
         .widget__field-input{
             border: solid 1px;
-            height: 2rem;
+            height: 2.5rem;
           display: flex;
           align-items: center;
-          width: 78vw;
+          width: 73vw;
           border-radius: 2px;
           padding-left: 0.7rem;
           /* margin-top: -.1rem; */
@@ -294,14 +313,15 @@
         
       }
       .widgetm__button{
-        height: 2.1rem;
-        width: 79vw;
+        height: 3rem;
+        width: 76vw;
         margin-top: 1.3rem ;
         background-color: var(--soft-green);
         border: 2px solid var(--soft-green);
         color:var(--white-0);
         font-weight: var(--semibold);
-        margin-top: 1.5rem;
+        font-size:var(--font-size-field-mobile);
+        margin-top: 3rem;
         cursor: pointer;
         &:hover {
           background-color: rgb(103, 188, 194); 
@@ -312,9 +332,11 @@
         display: grid;
         grid-template-columns: 10% 95%;
         margin-left: 3.5rem;
+        margin-top: 0.5rem;
       }
-      .widget__field--best-price{
-          font-size: 0.5rem;
+      .widgetm__field__bestprice{
+            
+          font-size: 1rem;
           font-weight: var(--semibold);
         }
 

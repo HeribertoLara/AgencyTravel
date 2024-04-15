@@ -5,7 +5,7 @@ const hotelOptions = [
         label: "ALL HOTELS",
       },
       {
-        value: "fivesresidence",
+        value: "fivesbeach",
         label: "THE FIVES BEACH HOTELS",
       },
       {
@@ -14,11 +14,17 @@ const hotelOptions = [
       },
       {
         value: "fivesmorelos",
-        label: "THE FIVES OCEAN FRONT",
+        label: "THE FIVES OCEANFRONT",
+      }, 
+      
+      {
+        value: "fivesresidence",
+        label: "THE FIVES RESIDENCES",
       },
       {
-        value: "fivesbeach",
+        value: "tbbtf",
         label: "THE FIVES BEACHFRONT BY THE FIVES",
-      },
+      }
     ];
     export default hotelOptions 
+   

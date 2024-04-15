@@ -13,7 +13,7 @@
   --soft-green: #99c4bc;
   --soft-gray:#ECE9E5;
   /*
-  * FontWeight
+  * FontWeight & sizes
   */
   --light: 200;
   --regular: 300;
@@ -21,9 +21,11 @@
   --semibold: 600;
   --bold: 700;
   --extra-bold: 800;
-  
+  --font-size-field-mobile:0.85rem;
+ 
   
   /*
+
   * Media Queries
   */
   --mobile-small: 300px ;

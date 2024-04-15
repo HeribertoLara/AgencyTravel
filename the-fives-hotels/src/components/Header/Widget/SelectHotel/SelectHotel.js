@@ -1,6 +1,7 @@
 import hotelOptions from "../hotelOptions";
 import reservHotelOptions from "../reservHotelOptions";
 import Image from "next/image";
+
 export default function SelectHotelComponent({
   hotel,
   setHotel,
@@ -8,79 +9,43 @@ export default function SelectHotelComponent({
   setReservHotel,
   withFly,
 }) {
-  const handleSubmitReserveSelect = (e) => {
-    // Encuentra el objeto del hotel seleccionado en reservHotelOptions
-    const selectedHotelOption = reservHotelOptions.find(
-      (option) => option.value === e.target.value
-    );
 
-    if (selectedHotelOption) {
-      setReservHotel(selectedHotelOption);
+  const handleSelectionChange = (e) => {
+    const selectedValue = e.target.value; 
+    const selectedOption = (withFly ? reservHotelOptions : hotelOptions).find(option => option.value === selectedValue);
+    if (withFly) {
+      setReservHotel(selectedOption);
     } else {
-      // Si no se encuentra el hotel seleccionado, establece reservHotel a un valor que indique "no seleccionado"
-      // Puedes ajustar este objeto a lo que mejor se ajuste a tu aplicación
-      setReservHotel({ value: "", label: "No seleccionado" });
+      setHotel(selectedOption);
     }
   };
-
+ 
   return (
     <article className="widget__field__select--hotel">
       <label> DISCOVER OUR HOTELS</label>
-
-      {withFly ? (
-        <div className="widget__select--container">
-          <figure>
-           <Image
-              src="assets/ubicacion.svg"
-              width={20}
-              height={20}
-              alt="close-icon"
-            />
-          </figure>
-
-          <select
-            name="hotel"
-            id="hotel"
-            value={reservHotel.value}
-            onChange={handleSubmitReserveSelect}
-            className="widget__select"
-          >
-            {reservHotelOptions.map((option) => (
-              <option key={option.noHotel} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </div>
-      ) : (
-        <div className="widget__select--container">
-          <figure>
-            <Image
-              src="assets/ubicacion.svg"
-              width={20}
-              height={20}
-              alt="close-icon"
-            />
-          </figure>
-          <select
-            name="hotel"
-            id="hotel"
-            value={hotel.value}
-            onChange={(e) =>
-              setHotel(
-                hotelOptions.find((option) => option.value === e.target.value)
-              )
-            }
-            className="widget__select"
-          >
-            {hotelOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </div>
-      )}
+      <div className="widget__select--container">
+        <figure>
+          <Image
+            src="assets/ubicacion.svg"
+            width={20}
+            height={20}
+            alt="close-icon"
+          />
+        </figure>
+        <select
+          name="hotel"
+          id="hotel"
+          value={withFly ? reservHotel.value : hotel.value} // Usa el value del estado actual para controlar el valor seleccionado
+          onChange={handleSelectionChange}
+          className="widget__select"
+        >
+          {(withFly ? reservHotelOptions : hotelOptions).map((option) => (
+            <option key={option.value} value={option.value} className="widget__select-option">
+              {option.label}
+            </option>
+          ))}
+        </select>
+      </div>
     </article>
   );
 }

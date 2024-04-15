@@ -1,5 +1,5 @@
 "use client";
-import Droplist from "./droplist/Droplist"
+import Droplist from "./Droplist/Droplist"
 import DoubleDropList from "./DoubleDropList/DoubleDropList";
 import Link from "next/link";
 import Image from "next/image";
@@ -213,12 +213,12 @@ export default function Menu({ setIsOpen, isOpen }) {
           <p>CLOSE</p>
         </button>
         <section className="header__language-mobile ">
-            <Link href="/" >
+            <a href="#" >
               <b>EN</b>
-            </Link>
-            <Link href="#">
+            </a>
+            <a href="#">
               <b>ES</b>
-            </Link>
+            </a>
         </section>
         <Droplist
           className="menu__droplist"
@@ -279,12 +279,12 @@ export default function Menu({ setIsOpen, isOpen }) {
             </a>
           </section>
           <section className="header__language ">
-            <Link href="/" className="border__white">
+            <a href="#" className="border__white">
               <b className="color__white">EN</b>
-            </Link>
-            <Link href="/es">
+            </a>
+            <a href="#">
               <b className="color__white">ES</b>
-            </Link>
+            </a>
           </section>
           <section className="header__help">
             <button className={"border__white"}>
