@@ -1,5 +1,5 @@
 "use client";
-import Droplist from "./DroplistTwo/Droplist"
+import Droplist from "./Droplist/Droplist"
 import DoubleDropList from "./DoubleDropList/DoubleDropList";
 import Link from "next/link";
 import Image from "next/image";
