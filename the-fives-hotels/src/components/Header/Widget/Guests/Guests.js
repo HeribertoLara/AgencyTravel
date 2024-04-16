@@ -17,8 +17,13 @@ export default function Guests({
 }) {
   const [openModal, setOpenModal] = useState(false);
   useEffect(()=>{
-    console.log(hotelLabel)
-  },[hotelLabel])
+    const targetLabel = "THE FIVES BEACHFRONT BY THE FIVES";
+    if (hotelLabel == targetLabel){
+      setChildren([])
+      setNumberChilds(0)
+    }
+    console.log(children)
+  },[hotelLabel, setChildren])
 
   return (
     <article className="guests-container">

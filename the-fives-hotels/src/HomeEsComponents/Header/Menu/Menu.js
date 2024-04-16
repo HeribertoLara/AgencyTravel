@@ -263,7 +263,7 @@ export default function Menu({ setIsOpen, isOpen }) {
       <div className="menu__rigth-side">
         <article className="menu__header">
           <Image
-            src="/assets/logo.svg"
+            src="/assets/logo.svg" 
             alt="The Fives Hotels logo"
             width={170}
             height={110}
