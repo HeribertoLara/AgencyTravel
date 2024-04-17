@@ -7,7 +7,7 @@ import useWindowDimensions from "../../hooks/useWindowDimensions"
 import Image from "next/image";
 import Link from "next/link";
 /* widgets */
-import Widget from "./Widget/widget";
+import BookingForm from "./Widget/widget";
 import MobileWidget from "./Widget/MobileWidget/MobileWidget";
 /* auxiliar components */
 import PreCheckin from "../PreCheckin/PreCheckin";
@@ -109,7 +109,7 @@ const Header = ({ isOpen, setIsOpen }) => {
       {isClient &&
         (width > breakpoint ? (
         
-            <Widget />
+            <BookingForm />
          
         ) : (
       
