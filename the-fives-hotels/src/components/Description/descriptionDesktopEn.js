@@ -10,17 +10,6 @@ export default function DescriptionDesktopEn(props) {
             src="/assets/pool.avif"
             alt="caribean-sea"
             fill
-            priority
-            sizes="(max-width: 1024px) 33%, 33%"
-            className="caribe-sea"
-  return (
-    <>
-      <section className="caribe">
-        <figure style={{ position: "relative", width: "100%", height: "80vh" }}>
-          <Image
-            src="/assets/pool.avif"
-            alt="caribean-sea"
-            fill
             className="caribe-sea"
             priority
             sizes="(max-width: 1024px) 33%, 33%"
@@ -58,13 +47,6 @@ export default function DescriptionDesktopEn(props) {
             local immersions that sharpen your five senses.
           </p>
           <p className="caribe__description">
-            The Fives Downtown takes you to the heart of Playa del Carmen 5th
-            Avenue, where vibrant restaurants, bars, and boutiques become your
-            adventure companions. The Fives Beach embraces you among its magical
-            landscapes, enigmatic spaces, and endless possibilities to
-            experience, while The Fives Oceanfront, in Puerto Morelos, invites
-            you to a relaxing experience by the sea, in a sanctuary of white
-            sands and turquoise waters.
             The Fives Downtown takes you to the heart of Playa del Carmen's 5th
             Avenue, where vibrant restaurants, bars, and boutiques become your
             adventure companions. The Fives Beach embraces you among its magical
