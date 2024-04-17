@@ -1,7 +1,15 @@
 "use client"
-import Image from "next/image";
 import "../../components/Header/Header.css";
+/* hooks */
 import { useEffect, useState } from "react";
+import useWindowDimensions from "../../hooks/useWindowDimensions"
+/* React Components */
+import Image from "next/image";
+import Link from "next/link";
+/* widgets components */
+import BookingForm from "./Widget/Widget";
+import MobileWidget from "./Widget/MobileWidget/MobileWidget";
+/* auxiliar Components */
 import PreCheckin from "./PreCheckin/PreCheckinEs";
 import Hamburguer from "./Hamburguer/Hamburguer";
 
@@ -9,10 +17,15 @@ const Header = ({isOpen, setIsOpen}) => {
 
   const[scroll, setScroll] = useState(false);
 
+  const { width } = useWindowDimensions(); // Obtiene el ancho de la ventana.
+  const breakpoint = 768; // Establece el punto de corte para móviles.
+  const [isClient, setIsClient] = useState(false);
+
 
   useEffect(()=>{
     /* detect when the user use scroll down */
       const onScroll = () => {
+        setIsClient(true);
       const scrollCheck = window.scrollY > 0;
       setScroll(scrollCheck);
      }
@@ -25,7 +38,8 @@ const Header = ({isOpen, setIsOpen}) => {
   }, [scroll, setScroll])
 
   return (
-    
+    <section>
+    {
     <header className={scroll? "header header__white": "header header__dark"} >
       <Hamburguer scroll={scroll} isOpen={isOpen} setIsOpen={setIsOpen}/>
       <PreCheckin scroll={scroll}/>
@@ -42,7 +56,9 @@ const Header = ({isOpen, setIsOpen}) => {
           <p className={scroll?"":"color__white"}>OFERTAS ESPECIALES</p>
         </a>
       </section>
-      <section className="header__logo">
+      <Link
+        href="/es" 
+        className="header__logo">
         <Image
           className={scroll?"fill__white":""}
           src="/assets/logo.svg"
@@ -50,7 +66,7 @@ const Header = ({isOpen, setIsOpen}) => {
           width={135}
           height={110}
         />
-      </section>
+      </Link>
       <section className="header__phone ">
         <a href="tel:+11234567890"> 
           <p className={scroll?"":"color__white"}>USA & CAN:</p> 
@@ -62,17 +78,17 @@ const Header = ({isOpen, setIsOpen}) => {
         </a>
       </section>
       <section className="header__language ">
-        <a href="#" className={scroll?"border__black":"border__white"}>
+        <Link href="/" className={scroll?"border__black":"border__white"}>
           <b className={scroll?"":"color__white"}>
             EN
           </b>
-        </a>
-        <a href="#">
+        </Link>
+        <Link href="/es">
           <b className={scroll?"":"color__white"}>
           
             ES
           </b>
-        </a>
+        </Link>
       </section>
       <section className="header__help">
         <button className={scroll?"border__black":"border__white"}>
@@ -86,6 +102,21 @@ const Header = ({isOpen, setIsOpen}) => {
         </button>
       </section> 
     </header>
+    }
+    {/* Renderiza condicionalmente Widget o MobileWidget basado en el ancho de la ventana. */}
+    {isClient &&
+      (width > breakpoint ? (
+      
+          <BookingForm />
+       
+      ) : (
+    
+          <MobileWidget />
+     
+      ))}
+    
+  </section>
   );
 };
+
 export default Header;

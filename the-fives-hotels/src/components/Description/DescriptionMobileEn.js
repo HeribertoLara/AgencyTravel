@@ -22,7 +22,7 @@ export default function DescriptionMobileEn() {
                 <Image
                     src="/assets/pool-responsive.avif"
                     alt="caribean-sea"
-                    layout="fill" 
+                    layout='fill'
                     priority
                 />
             </figure> 
