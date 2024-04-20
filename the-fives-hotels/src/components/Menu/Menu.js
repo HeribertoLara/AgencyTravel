@@ -224,7 +224,7 @@ export default function Menu({ setIsOpen, isOpen }) {
           name={menu.title}
           options={menu.items}
         />
-        <Link className="menu__special-offers" href="#">
+        <Link className="menu__special-offers" href="/special-offers">
           <Image
             src="/assets/Descuento.svg"
             alt="Special Offers"

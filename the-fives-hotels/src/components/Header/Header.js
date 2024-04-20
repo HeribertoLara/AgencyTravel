@@ -43,8 +43,8 @@ const Header = ({ isOpen, setIsOpen }) => {
           <Hamburguer scroll={scroll} isOpen={isOpen} setIsOpen={setIsOpen} />
           <PreCheckin scroll={scroll} />
           <section className="header-offers">
-            <a
-              href="#"
+            <Link
+              href="/special-offers"
               className={
                 scroll
                   ? "header__menu border__left-black"
@@ -58,7 +58,7 @@ const Header = ({ isOpen, setIsOpen }) => {
                 height={20}
               />
               <p className={scroll ? "" : "color__white"}>SPECIAL OFFERS</p>
-            </a>
+            </Link>
           </section>
           <section className="header__logo">
             <Link href="/">

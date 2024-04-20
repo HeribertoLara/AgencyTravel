@@ -1,5 +1,6 @@
-.banner-en{
-    background-image: url(../../../public/assets/OfferHomeEn.jpg);
+// BannerHomeEn.module.scss
+.bannerEn {
+    background-image: url(/assets/OfferHomeEn.jpg);
     background-size: cover;
     background-position: center center; 
     height: 95vh;
@@ -9,15 +10,13 @@
     color: blueviolet;
 }
 
-/* Media queries for mobile devices */
 @media screen and (max-width: 768px) {
-    .banner-en {
-        background-image: url(../../../public/assets/Home-Mobile-En.jpg);
+    .bannerEn {
+        background-image: url(/assets/OfferHomeEnMobile.jpg);
         height: 70vh;
         background-position: top center; 
         background-repeat: no-repeat;
         background-size: cover;
     }
-    
 }
 

@@ -22,7 +22,7 @@ export default function Guests({
       setChildren([])
       setNumberChilds(0)
     }
-    console.log(children)
+  
   },[hotelLabel, setChildren])
 
   return (

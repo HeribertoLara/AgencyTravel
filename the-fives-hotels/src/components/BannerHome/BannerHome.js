@@ -1,13 +1,9 @@
-import React from 'react'
-import { Image } from 'next/image';
-import './BannerHomeEn.css';
+import styles from './BannerHomeEn.module.scss';
 
 export default function BannerHomeEn(props) {
-    
-
     return (
-        <section className='banner-en'>
-           
+        <section className={styles.bannerEn}>
+          
         </section>
     )
 }

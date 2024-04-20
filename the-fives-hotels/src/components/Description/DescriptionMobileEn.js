@@ -19,12 +19,12 @@ export default function DescriptionMobileEn() {
                     height:"50vh"
                 }}
                 className="description-mobile__image">
-                <Image
+                 <Image
                     src="/assets/pool-responsive.avif"
                     alt="caribean-sea"
                     layout='fill'
                     priority
-                />
+                /> 
             </figure> 
         </section>
     )

@@ -20,7 +20,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./mobileWidget.scss";
 
 const MobileWidget = () => {
-  const [isActiveWidget, setIsActiveWidget] = useState(true);
+  const [isActiveWidget, setIsActiveWidget] = useState(false);
   const [adults, setAdults] = useState(2);
   const [airportsData, setAirportsData] = useState([]);
   const [arrivalDate, setArrivalDate] = useState(new Date());
