@@ -8,8 +8,8 @@ export default function Guests({
   hotelLabel,
   adults,
   setAdults,
-  children,
-  setChildren,
+  childAges,
+  setChildAges,
   numberChilds,
   setNumberChilds,
   maxNumberChilds,
@@ -19,10 +19,10 @@ export default function Guests({
   useEffect(()=>{
     const targetLabel = "THE FIVES BEACHFRONT BY THE FIVES";
     if (hotelLabel == targetLabel){
-      setChildren([])
+      setChildAges([])
       setNumberChilds(0)
     }
-  },[hotelLabel, setChildren])
+  },[hotelLabel, setChildAges, setNumberChilds])
 
   return (
     <article className="guests-container">
@@ -63,8 +63,8 @@ export default function Guests({
           {
           hotelLabel !== "THE FIVES BEACHFRONT BY THE FIVES" &&
          <Childs
-            children={children}
-            setChildren={setChildren}
+            childAges={childAges}
+            setChildAges={setChildAges}
             numberChilds={numberChilds}
             setNumberChilds={setNumberChilds}
             maxNumberChilds={maxNumberChilds}

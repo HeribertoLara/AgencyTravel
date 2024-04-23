@@ -7,7 +7,7 @@ import useWindowDimensions from "../../hooks/useWindowDimensions"
 import Image from "next/image";
 import Link from "next/link";
 /* widgets */
-import BookingForm from "./Widget/widget";
+import BookingForm from "./Widget/Widget";
 import MobileWidget from "./Widget/MobileWidget/MobileWidget";
 /* auxiliar components */
 import PreCheckin from "../PreCheckin/PreCheckin";

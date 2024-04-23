@@ -1,31 +1,30 @@
 /* hooks */
 import { useState, useEffect } from "react";
 /* components */
-import Dates from "./../Dates/Dates";
-import Guests from "./../Guests/Guests";
-import SelectHotel from "./../SelectHotel/SelectHotel";
-import SwitchToogle from "./../SwitchToogle/SwitchToogle";
+import Dates from "./Dates/Dates";
+import Guests from "./Guests/Guests";
+import SelectHotel from "./SelectHotel/SelectHotel";
+import SwitchToogle from "./SwitchToogle/SwitchToogle";
 /* libraries */
 import { format } from "date-fns";
 import { addDays } from "date-fns";
 import Image from "next/image";
 
 /* OPCIONES  DE HOTELES */
-import hotelOptions from "./../hotelOptions";
-import reservHotelOptions from "./../reservHotelOptions";
+import hotelOptions from "./hotelOptions";
+import reservHotelOptions from "./reservHotelOptions";
 /* Notificaciones */
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 /* styles */
-import "./mobileWidget.scss";
+import "./widget.scss";
+const BookingForm = () => {
 
-const MobileWidget = () => {
-  const [isActiveWidget, setIsActiveWidget] = useState(false);
   const [adults, setAdults] = useState(2);
   const [airportsData, setAirportsData] = useState([]);
   const [arrivalDate, setArrivalDate] = useState(new Date());
   const [airportError, setAirportError] = useState(false);
-  const [childAges, setChildAges] = useState([]);
+  const [children, setChildren] = useState([]);
   const [city, setCity] = useState("");
   const [departureDate, setDepartureDate] = useState(addDays(new Date(), 3));
   const [error, setError] = useState("");
@@ -47,6 +46,7 @@ const MobileWidget = () => {
       : setUrlBase(
           "https://booking.thefiveshotels.com/en/bookcore/availability"
         );
+        
   }, [hotel, withFly]);
 
   const handleAirportError = (message) => {
@@ -61,22 +61,22 @@ const MobileWidget = () => {
     arrivalDate,
     departureDate,
     adults,
-    childAges,
+    children,
     promoCode,
     urlBase
   }) => {
     // Inicializa la URL base dependiendo de si la reserva incluye vuelo
     let url = withFly
-      ? `${urlBase}/${reservHotel.location}/${reservHotel.value}/booking-engine/ibe5.main?hotel=${reservHotel.noHotel}&aDate=${arrivalDate}&dDate=${departureDate}&adults=${adults}&child=${childAges.length}&rooms=1&source=&show_ta_comm=&agent_fee=&abtest=&aff=&currency=&agent=&usr=&lang=1&showHotel=&rategroup=&rate=&sub_source=&PCC=&AirportDep=&PC=${promoCode}&view_type=&groupId=`
+      ? `${urlBase}/${reservHotel.location}/${reservHotel.value}/booking-engine/ibe5.main?hotel=${reservHotel.noHotel}&aDate=${arrivalDate}&dDate=${departureDate}&adults=${adults}&child=${children.length}&rooms=1&source=&show_ta_comm=&agent_fee=&abtest=&aff=&currency=&agent=&usr=&lang=1&showHotel=&rategroup=&rate=&sub_source=&PCC=&AirportDep=&PC=${promoCode}&view_type=&groupId=`
       : `${urlBase}/${hotel.value}/${arrivalDate}/${departureDate}/${adults}`;
   
     // Agrega parámetros para las edades de los niños, si aplica
-    if (childAges.length > 0) {
-      const childrenAges = childAges.join(withFly ? "&childages=" : ";");
+    if (children.length > 0) {
+      const childrenAges = children.join(withFly ? "&childages=" : ";");
       url += withFly ? `&childages=${childrenAges}` : `;${childrenAges}`;
     }
   
-    // Añade el código promocional a la URL, si está presente dependiendo de si es con vuelo o sin vuelo
+    // Añade el código promocional a la URL, si está presente
     if (promoCode) {
       url += withFly ? `&cp=${promoCode}` : `?cp=${promoCode}`;
     }
@@ -86,18 +86,18 @@ const MobileWidget = () => {
   
   const validateHotelSelection = () => {
     return withFly
-      ? reservHotel.value ? true : (toast.error("Selecciona un hotel para resrvar con vuelo."), false)
-      : hotel.value ? true : (toast.error("Selecciona un Hotel."), false);
+      ? reservHotel.value ? true : (toast.error("Please select a Hotel for booking with flight."), false)
+      : hotel.value ? true : (toast.error("Please select a Hotel for booking without flight."), false);
   };
 
 
   const validateDates = () => {
     if (!arrivalDate || !departureDate) {
-      toast.error("Selecciona  fechas de llegada y  salida.");
+      toast.error("Please select both arrival and departure dates.");
       return false;
     }
     if (arrivalDate >= departureDate) {
-      toast.error("la fecha de salida debe de ser mayor a la fecha de llegada.");
+      toast.error("Departure date must be later than arrival date.");
       return false;
     }
     return true;
@@ -105,15 +105,15 @@ const MobileWidget = () => {
 
   const validateAdults = () => {
     if (adults <= 0) {
-      toast.error("Incluye al menos un adulto.");
+      toast.error("Please include at least one adult in the booking.");
       return false;
     }
     return true;
   };
 
   const validateChildrenAges = () => {
-    if (childAges.some((child) => child < 0 || child > 17)) {
-      toast.error("Selecciona la edad de los niños de 0 a 16.");
+    if (children.some((child) => child < 0 || child > 17)) {
+      toast.error("Please ensure all children's ages are between 0 and 17.");
       return false;
     }
     return true;
@@ -122,11 +122,11 @@ const MobileWidget = () => {
   // Función para formatear y validar las fechas
   const formatAndValidateDates = () => {
     if (!arrivalDate || !departureDate) {
-      toast.error("Selecciona fecha de llegada y salida del hotel.");
-      return null; 
+      toast.error("Please select both arrival and departure dates.");
+      return null; // Retorna null si las fechas no están seleccionadas
     }
     if (arrivalDate >= departureDate) {
-      toast.error("la fecha de salida deb de ser mayor a la fecha de entrada.");
+      toast.error("Departure date must be later than arrival date.");
       return null; // Retorna null si la fecha de llegada es igual o posterior a la de salida
     }
 
@@ -157,7 +157,7 @@ const MobileWidget = () => {
         arrivalDate: dates.formattedArrivalDate,
         departureDate: dates.formattedDepartureDate,
         adults: adults,
-        childAges: childAges,
+        children: children,
         promoCode: promoCode,
         urlBase: urlBase
       });
@@ -170,12 +170,9 @@ const MobileWidget = () => {
   };
 
   const handleWithFlyChange = (withFly) => {
-   
   setWithFly(withFly);
-
   // Obtiene el label actualmente seleccionado
   const selectedLabel = withFly ? hotel.label : reservHotel.label; // 
-
   // Encuentra la correspondencia basada en el label en los arrays correctos
   const correspondingHotel = withFly
     ? reservHotelOptions.find(option => option.label === selectedLabel) // Busca en reservHotelOptions si withFly es true
@@ -201,110 +198,8 @@ const MobileWidget = () => {
 };
 
 
-   return isActiveWidget ? (
-    <section className={`widgetm__container ${isActiveWidget ? "widget-active" : ""}`}>
-      
-
-      <button
-        className="widgetm__backBtn"
-        onClick={() => setIsActiveWidget(false)}
-      >
-        <Image
-          src="/assets/arrow_bread_crumb.svg"
-          width={20}
-          height={20}
-          className="widget--back__btn--image"
-          alt="button back"
-        />
-        <aside>REGRESA</aside>
-      </button>
-
-      <form onSubmit={handleSubmit} className="widgetm__form">
-        <section className="widgetm--form__container">
-          <SelectHotel
-            hotel={hotel}
-            setHotel={setHotel}
-            withFly={withFly}
-            reservHotel={reservHotel}
-            setReservHotel={setReservHotel}
-          />
-          <Dates
-            arrivalDate={arrivalDate}
-            setArrivalDate={setArrivalDate}
-            departureDate={departureDate}
-            setDepartureDate={setDepartureDate}
-          />
-
-          <Guests
-            adults={adults}
-            setAdults={setAdults}
-            childAges={childAges}
-            setChildAges={setChildAges}
-            numberChilds={numberChilds}
-            setNumberChilds={setNumberChilds}
-            maxNumberChilds={maxNumberChilds}
-            hotelLabel={hotel.label}
-          />
-          <section className="widgetm__field--mobile">
-            <label>CODIGO PROMOCIONAL</label>
-            <div className="widget__field-input">
-              <Image
-                src="/assets/Descuento.svg"
-                width={18}
-                height={18}
-                alt="best-price-icon"
-                className="wigetm__field__best--price"
-                style={{
-                  width: 'auto', 
-                  height: 'auto'
-                }}
-              />
-              <input
-                type="text"
-                name="promoCode"
-                id="promoCode"
-                placeholder={""}
-                value={promoCode}
-                onChange={(e) => setPromoCode(e.target.value)}
-                className="widget__input"
-              />
-            </div>
-          </section>
-          <SwitchToogle
-            withFly={withFly}
-            setWithFly={setWithFly}
-            city={city}
-            setCity={setCity}
-            airportsData={airportsData}
-            setAirportsData={setAirportsData}
-            airportError={airportError}
-            setAirportError={setAirportError}
-            onWithFlyChange={handleWithFlyChange}
-            onAirportSelectValidation={handleAirportError}
-            selectedOption={selectedOption}
-            setSelectedOption={setSelectedOption}
-          />
-
-          
-          
-          
-          <div className="widgetm__field">
-            <button type="submit" className="widgetm__button">
-              BOOK NOW
-            </button>
-            <aside className="widgetm__field__bestprice--legend">
-              <Image
-                src="/assets/best_price.svg"
-                width={20}
-                height={20}
-                alt="best-price-icon"
-                className="wigetm__field__bestprice"
-              />
-              <p className="widgetm__field__bestprice">BEST PRICE GUARANTEE</p>
-            </aside>
-          </div>
-        </section>
-      </form>
+  return (
+    <form onSubmit={handleSubmit} className="widget">
       <ToastContainer
         position="top-center"
         autoClose={5000}
@@ -316,15 +211,91 @@ const MobileWidget = () => {
         draggable
         pauseOnHover
       />
-    </section>
-  ) : (
-    <button
-      type="button"
-      onClick={() => setIsActiveWidget(true)}
-      className="widgetm__btn-booknow"
-    >
-      BOOK NOW
-    </button>
+      <section className="widget__form--container">
+        <SelectHotel
+          hotel={hotel}
+          setHotel={setHotel}
+          withFly={withFly}
+          reservHotel={reservHotel}
+          setReservHotel={setReservHotel}
+         
+        />
+
+        {/* boton toogle */}
+        <SwitchToogle
+          withFly={withFly}
+          setWithFly={setWithFly}
+          city={city}
+          setCity={setCity}
+          airportsData={airportsData}
+          setAirportsData={setAirportsData}
+          airportError={airportError}
+          setAirportError={setAirportError}
+          onWithFlyChange={handleWithFlyChange}
+          onAirportSelectValidation={handleAirportError}
+          selectedOption={selectedOption}
+          setSelectedOption={setSelectedOption}
+        />
+        <Dates
+          arrivalDate={arrivalDate}
+          setArrivalDate={setArrivalDate}
+          departureDate={departureDate}
+          setDepartureDate={setDepartureDate}
+        />
+        <Guests
+          adults={adults}
+          setAdults={setAdults}
+          children={children}
+          setChildren={setChildren}
+          numberChilds={numberChilds}
+          setNumberChilds={setNumberChilds}
+          maxNumberChilds={maxNumberChilds}
+          hotelLabel={hotel.label}
+        />
+        
+        <section className="widget__field--pc">
+          <label>PROMO CODE</label>
+          <div className="widget__field-input">
+            <Image
+              src="/assets/Descuento.svg"
+              width={18}
+              height={18}
+              alt="best-price-icon"
+              className="wiget__field--best-price"
+              style={{
+                width: 'auto', 
+                height: 'auto'
+              }}
+            />
+            <input
+              type="text"
+              name="promoCode"
+              id="promoCode"
+              placeholder={""}
+              value={promoCode}
+              onChange={(e) => setPromoCode(e.target.value)}
+              className="widget__input"
+            />
+          </div>
+        </section>
+        <div className="widget__field">
+          <button type="submit" className="widget__button">
+            BOOK NOW
+          </button>
+          <aside className="widget__field--best-price-legend">
+            <Image
+              src="/assets/best_price.svg"
+              width={15}
+              height={15}
+              alt="best-price-icon"
+              className="wiget__field--best-price"
+            />
+            <p className="widget__field--best-price">BEST PRICE GUARANTEE</p>
+          </aside>
+        </div>
+      </section>
+    </form>
   );
 };
-export default MobileWidget;
+
+export default BookingForm;

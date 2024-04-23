@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Header from '../../HomeEsComponents/Header/Header'
 import Menu from 'app/HomeEsComponents/Header/Menu/Menu'
 import BannerHomeEn from '../../HomeEsComponents/BannerHome/BannerHome'
-import DescriptionEn from '../../HomeEsComponents/Description/DescriptionEn'
+import DescriptionEs from '../../HomeEsComponents/Description/DescriptionEs'
 import OurHotel from '../../HomeEsComponents/OurHotels/OurHotel';
 import Residence from '../../HomeEsComponents/Residence/Residence'
 import Services from 'app/HomeEsComponents/Services/Services'
@@ -22,7 +22,7 @@ export default function Page(props) {
            :<Menu isOpen={isOpen} setIsOpen={setIsOpen}/> 
         } 
         <BannerHomeEn/>
-        <DescriptionEn/>
+        <DescriptionEs/>
         <OurHotel/>
         <Residence/>
         <Sense/>

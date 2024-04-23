@@ -1,7 +1,7 @@
 import "./Guest.scss";
 export default function Childs({
-  children,
-  setChildren,
+  childAges,
+  setChildAges,
   numberChilds,
   setNumberChilds,
   maxNumberChilds,
@@ -11,23 +11,23 @@ export default function Childs({
       prevValue < maxNumberChilds ? prevValue + 1 : prevValue
     );
     if (currentValue < maxNumberChilds) {
-      setChildren([...children, 0]);
+      setChildAges([...childAges, 0]);
     
     }
-    /* children es una prop que es un array vacio  vamos a agregar  un 0 a este array que va a ser igual al numberChilds */
+    /* childAges es una prop que es un array vacio  vamos a agregar  un 0 a este array que va a ser igual al numberChilds */
   };
 
   const decrementChilds = () => {
     if (numberChilds > 0) {
       setNumberChilds(prevValue => prevValue - 1);
-      setChildren(prevChildren => prevChildren.slice(0, -1)); // Elimina el último niño
+      setChildAges(prevChildren => prevChildren.slice(0, -1)); // Elimina el último niño
     }
   };
   const handleAgeChange = (index, newAge) => {
     const age = Math.max(0, Math.min(17, parseInt(newAge, 10) || 0));
-    const updatedChildren = [...children];
+    const updatedChildren = [...childAges];
     updatedChildren[index] = age;
-    setChildren(updatedChildren);
+    setChildAges(updatedChildren);
   };
   return (
     <article className="modal-guest__children-counter">
@@ -59,7 +59,7 @@ export default function Childs({
       </section>
       <div className="modal-child-ages">
 
-      {children.map((child, index) => (
+      {childAges.map((child, index) => (
         <section className=" modal-guest__child" key={index}>
           <label className=" modal-guest__child--label">
             Niño {index + 1}

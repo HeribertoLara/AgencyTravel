@@ -13,37 +13,37 @@ const ModalAirPort = ({
   const [inputValue, setInputValue] = useState("");
  
 
-  async function getAirports(inputValue) {
-    try {
-      const response = await fetch(
-        `https://www.reservhotel.com/win/owa/ibe5.get_airport_json?p_search=${inputValue}`
-      );
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const airportsDataRes = await response.json();
-      setAirportsData(
-        airportsDataRes.map((airport) => ({
-          label: airport.label,
-          value: airport.value,
-        }))
-      );
-      setAirportError(false);
-    } catch (error) {
-      console.error(`Error in filtering Airport: ${error}`);
-      setAirportsData([]);
-      setAirportError(true);
-    }
-  }
-
   // Efecto para actualizar las opciones basadas en la entrada del usuario
   useEffect(() => {
+    async function getAirports(inputValue) {
+      try {
+        const response = await fetch(
+          `https://www.reservhotel.com/win/owa/ibe5.get_airport_json?p_search=${inputValue}`
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const airportsDataRes = await response.json();
+        setAirportsData(
+          airportsDataRes.map((airport) => ({
+            label: airport.label,
+            value: airport.value,
+          }))
+        );
+        setAirportError(false);
+      } catch (error) {
+        console.error(`Error in filtering Airport: ${error}`);
+        setAirportsData([]);
+        setAirportError(true);
+      }
+    }
     if (inputValue) {
+      
       getAirports(inputValue);
     } else {
       setAirportsData([]);
     }
-  }, [inputValue]);
+  }, [inputValue, setAirportsData, setAirportError]);
 
   const handleInputChange = (newValue, actionMeta) => {
     if (actionMeta.action === "input-change") {

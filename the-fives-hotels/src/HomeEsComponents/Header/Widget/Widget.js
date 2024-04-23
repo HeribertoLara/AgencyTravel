@@ -24,7 +24,7 @@ const BookingForm = () => {
   const [airportsData, setAirportsData] = useState([]);
   const [arrivalDate, setArrivalDate] = useState(new Date());
   const [airportError, setAirportError] = useState(false);
-  const [children, setChildren] = useState([]);
+  const [childAges, setChildAges] = useState([]);
   const [city, setCity] = useState("");
   const [departureDate, setDepartureDate] = useState(addDays(new Date(), 3));
   const [error, setError] = useState("");
@@ -61,18 +61,18 @@ const BookingForm = () => {
     arrivalDate,
     departureDate,
     adults,
-    children,
+    childAges,
     promoCode,
     urlBase
   }) => {
     // Inicializa la URL base dependiendo de si la reserva incluye vuelo
     let url = withFly
-      ? `${urlBase}/${reservHotel.location}/${reservHotel.value}/booking-engine/ibe5.main?hotel=${reservHotel.noHotel}&aDate=${arrivalDate}&dDate=${departureDate}&adults=${adults}&child=${children.length}&rooms=1&source=&show_ta_comm=&agent_fee=&abtest=&aff=&currency=&agent=&usr=&lang=1&showHotel=&rategroup=&rate=&sub_source=&PCC=&AirportDep=&PC=${promoCode}&view_type=&groupId=`
+      ? `${urlBase}/${reservHotel.location}/${reservHotel.value}/booking-engine/ibe5.main?hotel=${reservHotel.noHotel}&aDate=${arrivalDate}&dDate=${departureDate}&adults=${adults}&child=${childAges.length}&rooms=1&source=&show_ta_comm=&agent_fee=&abtest=&aff=&currency=&agent=&usr=&lang=1&showHotel=&rategroup=&rate=&sub_source=&PCC=&AirportDep=&PC=${promoCode}&view_type=&groupId=`
       : `${urlBase}/${hotel.value}/${arrivalDate}/${departureDate}/${adults}`;
   
     // Agrega parámetros para las edades de los niños, si aplica
-    if (children.length > 0) {
-      const childrenAges = children.join(withFly ? "&childages=" : ";");
+    if (childAges.length > 0) {
+      const childrenAges = childAges.join(withFly ? "&childages=" : ";");
       url += withFly ? `&childages=${childrenAges}` : `;${childrenAges}`;
     }
   
@@ -112,7 +112,7 @@ const BookingForm = () => {
   };
 
   const validateChildrenAges = () => {
-    if (children.some((child) => child < 0 || child > 17)) {
+    if (childAges.some((child) => child < 0 || child > 17)) {
       toast.error("por favor selecciona la edad de los niños entre 0 a 16 años.");
       return false;
     }
@@ -157,7 +157,7 @@ const BookingForm = () => {
         arrivalDate: dates.formattedArrivalDate,
         departureDate: dates.formattedDepartureDate,
         adults: adults,
-        children: children,
+        childAges: childAges,
         promoCode: promoCode,
         urlBase: urlBase
       });
@@ -245,8 +245,8 @@ const BookingForm = () => {
         <Guests
           adults={adults}
           setAdults={setAdults}
-          children={children}
-          setChildren={setChildren}
+          childAges={childAges}
+          setChildAges={setChildAges}
           numberChilds={numberChilds}
           setNumberChilds={setNumberChilds}
           maxNumberChilds={maxNumberChilds}

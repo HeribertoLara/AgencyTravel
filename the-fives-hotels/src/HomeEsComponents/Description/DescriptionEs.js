@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react";
-import DescriptionMobileEn from "./DescriptionMobileEn";
-import DescriptionDesktop from "./descriptionDesktopEn";
+import DescriptionMobileEn from "./DescriptionMobileEs";
+import DescriptionDesktop from "./DescriptionDesktopEs";
 
 export default function DescriptionEn(props) {
   const [isDesktop, setIsDesktop] = useState(false);
